@@ -195,14 +195,13 @@ public class FrontPage extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        myAccountMenu = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        systemMenu = new javax.swing.JMenu();
+        changePasswordMenu = new javax.swing.JMenuItem();
+        createNewUserMenu = new javax.swing.JMenuItem();
+        viewAllUsersMenu = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        backUpMenu = new javax.swing.JMenuItem();
+        restoreMenu = new javax.swing.JMenuItem();
 
         searchPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -742,6 +741,8 @@ public class FrontPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/applicant - s.png"))); // NOI18N
         jMenu1.setText("Applicant");
 
@@ -783,7 +784,7 @@ public class FrontPage extends javax.swing.JFrame {
         Grant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/grant - s.png"))); // NOI18N
         Grant.setText("Grant");
 
-        jMenuItem7.setText("Add new Permit");
+        jMenuItem7.setText("Add new Grant");
         Grant.add(jMenuItem7);
 
         jMenuItem8.setText("Nominate a successor");
@@ -808,59 +809,51 @@ public class FrontPage extends javax.swing.JFrame {
         jMenu3.setText("Reports");
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/System.png"))); // NOI18N
-        jMenu4.setText("System");
+        systemMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/System.png"))); // NOI18N
+        systemMenu.setText("System");
 
-        myAccountMenu.setText("My account");
-        myAccountMenu.addActionListener(new java.awt.event.ActionListener() {
+        changePasswordMenu.setText("Change password");
+        changePasswordMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myAccountMenuActionPerformed(evt);
+                changePasswordMenuActionPerformed(evt);
             }
         });
-        jMenu4.add(myAccountMenu);
+        systemMenu.add(changePasswordMenu);
 
-        jMenuItem11.setText("Change password");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        createNewUserMenu.setText("Create new user");
+        createNewUserMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                createNewUserMenuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem11);
+        systemMenu.add(createNewUserMenu);
 
-        jMenuItem12.setText("Create new user");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        viewAllUsersMenu.setText("View all users");
+        viewAllUsersMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                viewAllUsersMenuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem12);
+        systemMenu.add(viewAllUsersMenu);
+        systemMenu.add(jSeparator1);
 
-        jMenuItem10.setText("View all users");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        backUpMenu.setText("Create a backup");
+        backUpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                backUpMenuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem10);
-        jMenu4.add(jSeparator1);
+        systemMenu.add(backUpMenu);
 
-        jMenuItem13.setText("Create a backup");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+        restoreMenu.setText("Restore backup");
+        restoreMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
+                restoreMenuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem13);
+        systemMenu.add(restoreMenu);
 
-        jMenuItem14.setText("Restore backup");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem14);
-
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(systemMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -1029,7 +1022,7 @@ new ChangeGrantOwnershipForm().setVisible(true);
         new ChangeNominateSuccessoGrantrForm(this, true).setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+    private void backUpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backUpMenuActionPerformed
         /*try {
             int writeBackup = BackUp.writeBackup();
             if(writeBackup==0){
@@ -1041,9 +1034,9 @@ new ChangeGrantOwnershipForm().setVisible(true);
         } catch (IOException ex) {
                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+    }//GEN-LAST:event_backUpMenuActionPerformed
 
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+    private void restoreMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restoreMenuActionPerformed
         try {
             int restoreBackup = backUP.restoreBackup();
             if(restoreBackup==0){
@@ -1056,7 +1049,7 @@ new ChangeGrantOwnershipForm().setVisible(true);
         } catch (IOException | InterruptedException ex) {
            ex.printStackTrace();
         }
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
+    }//GEN-LAST:event_restoreMenuActionPerformed
 
     private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutButtonActionPerformed
         
@@ -1071,21 +1064,17 @@ new ChangeGrantOwnershipForm().setVisible(true);
         }
     }//GEN-LAST:event_ExitButtonActionPerformed
 
-    private void myAccountMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_myAccountMenuActionPerformed
-
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+    private void changePasswordMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordMenuActionPerformed
         new PasswordManager(this, true, curruser).setVisible(true);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    }//GEN-LAST:event_changePasswordMenuActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    private void createNewUserMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewUserMenuActionPerformed
         new NewUserCreator(this, true).setVisible(true);
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
+    }//GEN-LAST:event_createNewUserMenuActionPerformed
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    private void viewAllUsersMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllUsersMenuActionPerformed
         new ViewAllUsers(this, true).setVisible(true);
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    }//GEN-LAST:event_viewAllUsersMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1138,7 +1127,10 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JButton addnewlandbutton;
     private javax.swing.JButton addnewpermitbutton;
     private javax.swing.ButtonGroup applicantSearchSet;
+    private javax.swing.JMenuItem backUpMenu;
+    private javax.swing.JMenuItem changePasswordMenu;
     private javax.swing.JButton changegrantownershipbutton;
+    private javax.swing.JMenuItem createNewUserMenu;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JPanel desktopJPanel;
     private javax.swing.JDesktopPane desktopPane;
@@ -1170,14 +1162,8 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -1196,17 +1182,19 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.ButtonGroup landSearchSet;
-    private javax.swing.JMenuItem myAccountMenu;
     private javax.swing.ButtonGroup permitSearchSet;
+    private javax.swing.JMenuItem restoreMenu;
     private javax.swing.ButtonGroup searchButtonSet;
     private javax.swing.JComboBox searchByWhatCombo;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JPanel searchPanel1;
     private javax.swing.JComboBox searchSetCombo;
     private javax.swing.JPanel shortcutAccessPanel;
+    private javax.swing.JMenu systemMenu;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JPanel userLogPanel;
     private javax.swing.JLabel username;
     private javax.swing.JPanel userpanel;
+    private javax.swing.JMenuItem viewAllUsersMenu;
     // End of variables declaration//GEN-END:variables
 }
