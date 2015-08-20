@@ -96,6 +96,11 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
     public void requestFoucsForm() {
         nameText.requestFocus();
     }
+    public ApplicantForm(int tab) {
+        this();
+        jTabbedPane1.setSelectedIndex(tab);
+    }
+
 
     public ApplicantForm(String nic) {
         this();

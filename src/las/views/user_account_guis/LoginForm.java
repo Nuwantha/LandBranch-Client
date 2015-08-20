@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.text.JTextComponent;
 import las.common_classes.GUIitemsValidator;
 import las.controller.PermitController;
@@ -39,6 +40,8 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         initComponents();
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
+        setIconImage(icon1.getImage());
         try {
             Connector sConnector = Connector.getSConnector();
             UserController = sConnector.getUserController();
@@ -48,6 +51,7 @@ public class LoginForm extends javax.swing.JFrame {
         }
         logInFailedLabel.setVisible(false);
         userCombo.setEditable(true);
+        userCombo.requestFocus();
         JTextComponent editorCancelPemitPNCombo = (JTextComponent) userCombo.getEditor().getEditorComponent();
         editorCancelPemitPNCombo.addKeyListener(new KeyAdapter() {
 
@@ -64,6 +68,9 @@ public class LoginForm extends javax.swing.JFrame {
                     GUIitemsValidator.addItemToCombo(list, userCombo);
                 } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                     Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if(e.getKeyCode()==KeyEvent.VK_ENTER){
+                    passwordField.requestFocus();
                 }
 
             }
@@ -140,10 +147,10 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel2.add(jPanel1);
         jPanel1.setBounds(30, 20, 1050, 190);
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 102, 51));
         jLabel4.setText("USER LOG-IN");
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -158,7 +165,8 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        logInButton.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        logInButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        logInButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/login.png"))); // NOI18N
         logInButton.setText("Log in");
         logInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +176,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         logInFailedLabel.setBackground(new java.awt.Color(255, 255, 255));
         logInFailedLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        logInFailedLabel.setForeground(new java.awt.Color(255, 255, 255));
+        logInFailedLabel.setForeground(new java.awt.Color(255, 0, 0));
         logInFailedLabel.setText("Log in Failed!");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -176,28 +184,24 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(15, 15, 15)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(passwordField)
-                                .addComponent(userCombo, 0, 149, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(logInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(logInFailedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                                .addComponent(logInButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addComponent(logInFailedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(15, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,22 +211,22 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(userCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logInButton)
-                    .addComponent(logInFailedLabel))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addComponent(passwordField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logInFailedLabel)
+                    .addComponent(logInButton))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3);
-        jPanel3.setBounds(390, 320, 490, 270);
+        jPanel3.setBounds(390, 320, 420, 230);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logback2.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logback1.jpg"))); // NOI18N
         jPanel2.add(jLabel3);
         jLabel3.setBounds(5, -4, 1460, 760);
 
@@ -255,6 +259,7 @@ public class LoginForm extends javax.swing.JFrame {
             String password = (passwordField.getText());
             if (UserController.matchPassword(username, password)) {
                 new FrontPage(username).setVisible(true);
+                this.dispose();
             } else {
                 logInFailedLabel.setVisible(true);
             }

@@ -54,6 +54,8 @@ public class ChangePermitOwnershipForm extends javax.swing.JDialog {
             Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        setLocationRelativeTo(null);
+        setTitle("Change Permit Ownership");
         add_button.setEnabled(false);
         this.permit_number_combo.setEditable(true);
         nic_text.requestFocus();

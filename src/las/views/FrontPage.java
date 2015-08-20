@@ -8,6 +8,7 @@ package las.views;
 import SeverConnector.Connector;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
@@ -20,6 +21,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import las.common_classes.GUIitemsValidator;
 import las.common_classes.PatternChecker;
@@ -28,6 +30,9 @@ import las.controller.GramaNiladariDivisionController;
 import las.controller.UserController;
 import las.models.GramaNiladariDivision;
 import las.models.User;
+import las.views.reportdialogs.ApplicantByDivisionDialog;
+import las.views.reportdialogs.LandsReportDialog;
+import las.views.reportdialogs.PermitGrantByYearDialog;
 import las.views.searchset.SearchClientForm;
 import las.views.searchset.SearchForm;
 import las.views.searchset.SearchGrantForm;
@@ -36,6 +41,8 @@ import las.views.user_account_guis.LoginForm;
 import las.views.user_account_guis.NewUserCreator;
 import las.views.user_account_guis.PasswordManager;
 import las.views.user_account_guis.ViewAllUsers;
+import las.views.view_utilities.Calculator;
+import las.views.view_utilities.Calender;
 
 /**
  *
@@ -54,6 +61,8 @@ public class FrontPage extends javax.swing.JFrame {
     public FrontPage() {
         initComponents();
         
+        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
+        setIconImage(icon1.getImage());
         try {
             Connector sConnector = Connector.getSConnector();
             UserController=sConnector.getUserController();
@@ -88,7 +97,7 @@ public class FrontPage extends javax.swing.JFrame {
             User currentuser = UserController.searchUser(user);
             //for gramaniladari
             if (currentuser.getPower() == 3) {
-                AddNewApplicantButton.setEnabled(false);
+                addNewApplicantButton.setEnabled(false);
                 addnewpermitbutton.setEnabled(false);
                 addnewgrantbutton.setEnabled(false);
                 addnewlandbutton.setEnabled(false);
@@ -170,11 +179,13 @@ public class FrontPage extends javax.swing.JFrame {
         searchSetCombo = new javax.swing.JComboBox();
         searchByWhatCombo = new javax.swing.JComboBox();
         goButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         internalFrameAreaPanel = new javax.swing.JPanel();
         desktopPane = new javax.swing.JDesktopPane();
         jPanel3 = new javax.swing.JPanel();
         shortcutAccessPanel = new javax.swing.JPanel();
-        AddNewApplicantButton = new javax.swing.JButton();
+        addNewApplicantButton = new javax.swing.JButton();
         addnewpermitbutton = new javax.swing.JButton();
         addnewgrantbutton = new javax.swing.JButton();
         addnewlandbutton = new javax.swing.JButton();
@@ -183,18 +194,21 @@ public class FrontPage extends javax.swing.JFrame {
         changegrantownershipbutton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        addApplicantMenu = new javax.swing.JMenuItem();
+        editApplicantMenu = new javax.swing.JMenuItem();
+        viewAllAppMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        addPermitMenu = new javax.swing.JMenuItem();
+        nomPerSuccessorMenu = new javax.swing.JMenuItem();
+        changeOwnPerMenu = new javax.swing.JMenuItem();
         Grant = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        addGrantMenu = new javax.swing.JMenuItem();
+        nomGraSuccessorMenu = new javax.swing.JMenuItem();
+        changeOwnGraMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        statDivisionMenu = new javax.swing.JMenuItem();
+        statLandMenu = new javax.swing.JMenuItem();
+        statYearMenu = new javax.swing.JMenuItem();
         systemMenu = new javax.swing.JMenu();
         changePasswordMenu = new javax.swing.JMenuItem();
         createNewUserMenu = new javax.swing.JMenuItem();
@@ -346,6 +360,16 @@ public class FrontPage extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logo-LAS - Copy.jpg"))); // NOI18N
 
@@ -451,6 +475,11 @@ public class FrontPage extends javax.swing.JFrame {
 
         CalenderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/Calendar68.png"))); // NOI18N
         CalenderButton.setToolTipText("Calender");
+        CalenderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalenderButtonActionPerformed(evt);
+            }
+        });
 
         REminderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/reminders.png"))); // NOI18N
         REminderButton.setToolTipText("Reminders");
@@ -462,6 +491,11 @@ public class FrontPage extends javax.swing.JFrame {
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/Calc6868.png"))); // NOI18N
         jButton17.setToolTipText("Calculator");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/Calc6868.png"))); // NOI18N
         jButton18.setToolTipText("Calculator");
@@ -558,6 +592,12 @@ public class FrontPage extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/ourlogo.png"))); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel9.setText("-A Product By GuideSpark-");
+
         javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
@@ -567,12 +607,18 @@ public class FrontPage extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(searchPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(searchSetCombo, 0, 162, Short.MAX_VALUE)
-                                .addComponent(searchByWhatCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(goButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(searchPanelLayout.createSequentialGroup()
+                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(searchSetCombo, 0, 162, Short.MAX_VALUE)
+                                        .addComponent(searchByWhatCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(goButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(searchPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(17, 17, 17)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         searchPanelLayout.setVerticalGroup(
@@ -585,7 +631,11 @@ public class FrontPage extends javax.swing.JFrame {
                 .addComponent(searchByWhatCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(goButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         desktopPane.setOpaque(false);
@@ -639,20 +689,20 @@ public class FrontPage extends javax.swing.JFrame {
         shortcutAccessPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         shortcutAccessPanel.setLayout(new java.awt.GridLayout(7, 1, 50, 10));
 
-        AddNewApplicantButton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        AddNewApplicantButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/applicant.png"))); // NOI18N
-        AddNewApplicantButton.setText("Applicant Details");
-        importantButtonSet.add(AddNewApplicantButton);
-        AddNewApplicantButton.addActionListener(new java.awt.event.ActionListener() {
+        addNewApplicantButton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        addNewApplicantButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/applicant.png"))); // NOI18N
+        addNewApplicantButton.setText("1-Applicant Details");
+        importantButtonSet.add(addNewApplicantButton);
+        addNewApplicantButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddNewApplicantButtonActionPerformed(evt);
+                addNewApplicantButtonActionPerformed(evt);
             }
         });
-        shortcutAccessPanel.add(AddNewApplicantButton);
+        shortcutAccessPanel.add(addNewApplicantButton);
 
         addnewpermitbutton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         addnewpermitbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/permit.png"))); // NOI18N
-        addnewpermitbutton.setText("Permit Details");
+        addnewpermitbutton.setText("2-Permit Details");
         importantButtonSet.add(addnewpermitbutton);
         addnewpermitbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -663,7 +713,7 @@ public class FrontPage extends javax.swing.JFrame {
 
         addnewgrantbutton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         addnewgrantbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/grant.png"))); // NOI18N
-        addnewgrantbutton.setText("Grant Details");
+        addnewgrantbutton.setText("3-Grant Details");
         importantButtonSet.add(addnewgrantbutton);
         addnewgrantbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -674,7 +724,7 @@ public class FrontPage extends javax.swing.JFrame {
 
         addnewlandbutton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         addnewlandbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/land.png"))); // NOI18N
-        addnewlandbutton.setText("Land Details");
+        addnewlandbutton.setText("4-Land Details");
         importantButtonSet.add(addnewlandbutton);
         addnewlandbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -685,7 +735,7 @@ public class FrontPage extends javax.swing.JFrame {
 
         addcertificationbutton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         addcertificationbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/certify.png"))); // NOI18N
-        addcertificationbutton.setText("Permit Certification");
+        addcertificationbutton.setText("5-Permit Certification");
         importantButtonSet.add(addcertificationbutton);
         addcertificationbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -696,7 +746,7 @@ public class FrontPage extends javax.swing.JFrame {
 
         GramaNiladariDivisionInfoButton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         GramaNiladariDivisionInfoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/villages.png"))); // NOI18N
-        GramaNiladariDivisionInfoButton.setText("Village Division Info");
+        GramaNiladariDivisionInfoButton.setText("6-Village Division Info");
         importantButtonSet.add(GramaNiladariDivisionInfoButton);
         GramaNiladariDivisionInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -707,7 +757,7 @@ public class FrontPage extends javax.swing.JFrame {
 
         changegrantownershipbutton.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         changegrantownershipbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/change_owner.png"))); // NOI18N
-        changegrantownershipbutton.setText("Change Ownership");
+        changegrantownershipbutton.setText("7-Change Ownership");
         importantButtonSet.add(changegrantownershipbutton);
         shortcutAccessPanel.add(changegrantownershipbutton);
 
@@ -724,7 +774,7 @@ public class FrontPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(internalFrameAreaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(shortcutAccessPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(shortcutAccessPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         desktopJPanelLayout.setVerticalGroup(
             desktopJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -746,67 +796,117 @@ public class FrontPage extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/applicant - s.png"))); // NOI18N
         jMenu1.setText("Applicant");
 
-        jMenuItem1.setText("Add new applicant");
-        jMenu1.add(jMenuItem1);
+        addApplicantMenu.setText("Add new applicant");
+        addApplicantMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addApplicantMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(addApplicantMenu);
 
-        jMenuItem2.setText("Edit applicant");
-        jMenu1.add(jMenuItem2);
+        editApplicantMenu.setText("Edit applicant");
+        editApplicantMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editApplicantMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(editApplicantMenu);
 
-        jMenuItem3.setText("View all applicants");
-        jMenu1.add(jMenuItem3);
+        viewAllAppMenu.setText("Search applicant");
+        viewAllAppMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllAppMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(viewAllAppMenu);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/permit - s.png"))); // NOI18N
         jMenu2.setText("Permit");
 
-        jMenuItem4.setText("Add new permit");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("Nominate a successor");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        addPermitMenu.setText("Add new permit");
+        addPermitMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                addPermitMenuActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
+        jMenu2.add(addPermitMenu);
 
-        jMenuItem6.setText("Change ownership");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        nomPerSuccessorMenu.setText("Nominate a successor");
+        nomPerSuccessorMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                nomPerSuccessorMenuActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        jMenu2.add(nomPerSuccessorMenu);
+
+        changeOwnPerMenu.setText("Change ownership");
+        changeOwnPerMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeOwnPerMenuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(changeOwnPerMenu);
 
         jMenuBar1.add(jMenu2);
 
         Grant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/grant - s.png"))); // NOI18N
         Grant.setText("Grant");
 
-        jMenuItem7.setText("Add new Grant");
-        Grant.add(jMenuItem7);
-
-        jMenuItem8.setText("Nominate a successor");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        addGrantMenu.setText("Add new Grant");
+        addGrantMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                addGrantMenuActionPerformed(evt);
             }
         });
-        Grant.add(jMenuItem8);
+        Grant.add(addGrantMenu);
 
-        jMenuItem9.setText("Change ownership");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        nomGraSuccessorMenu.setText("Nominate a successor");
+        nomGraSuccessorMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                nomGraSuccessorMenuActionPerformed(evt);
             }
         });
-        Grant.add(jMenuItem9);
+        Grant.add(nomGraSuccessorMenu);
+
+        changeOwnGraMenu.setText("Change ownership");
+        changeOwnGraMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeOwnGraMenuActionPerformed(evt);
+            }
+        });
+        Grant.add(changeOwnGraMenu);
 
         jMenuBar1.add(Grant);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/chart.png"))); // NOI18N
         jMenu3.setText("Reports");
+
+        statDivisionMenu.setText("Statistics by Division");
+        statDivisionMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statDivisionMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(statDivisionMenu);
+
+        statLandMenu.setText("Statistics of Lands");
+        statLandMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statLandMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(statLandMenu);
+
+        statYearMenu.setText("Statistics by Year");
+        statYearMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statYearMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(statYearMenu);
+
         jMenuBar1.add(jMenu3);
 
         systemMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/System.png"))); // NOI18N
@@ -877,14 +977,14 @@ public class FrontPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_REminderButtonActionPerformed
 
-    private void AddNewApplicantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewApplicantButtonActionPerformed
+    private void addNewApplicantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewApplicantButtonActionPerformed
         ApplicantForm applicantForm = new ApplicantForm();
         applicantForm.setSize(desktopPane.getSize());
         desktopPane.removeAll();
         desktopPane.add(applicantForm);
         applicantForm.setVisible(true);
         applicantForm.requestFoucsForm();
-    }//GEN-LAST:event_AddNewApplicantButtonActionPerformed
+    }//GEN-LAST:event_addNewApplicantButtonActionPerformed
 
     public void addApplicantForm(String nic){
         ApplicantForm applicantForm = new ApplicantForm(nic);
@@ -1006,21 +1106,21 @@ public class FrontPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchSetComboActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void nomPerSuccessorMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomPerSuccessorMenuActionPerformed
         new ChangeNominateSuccessoOfPermitrForm(this, true).setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_nomPerSuccessorMenuActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void changeOwnPerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeOwnPerMenuActionPerformed
         new ChangePermitOwnershipForm().setVisible(true);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_changeOwnPerMenuActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void changeOwnGraMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeOwnGraMenuActionPerformed
 new ChangeGrantOwnershipForm().setVisible(true);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_changeOwnGraMenuActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void nomGraSuccessorMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomGraSuccessorMenuActionPerformed
         new ChangeNominateSuccessoGrantrForm(this, true).setVisible(true);
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_nomGraSuccessorMenuActionPerformed
 
     private void backUpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backUpMenuActionPerformed
         /*try {
@@ -1076,6 +1176,97 @@ new ChangeGrantOwnershipForm().setVisible(true);
         new ViewAllUsers(this, true).setVisible(true);
     }//GEN-LAST:event_viewAllUsersMenuActionPerformed
 
+    private void addGrantMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addGrantMenuActionPerformed
+        GrantForm grantForm = new GrantForm();
+        grantForm.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(grantForm);
+        grantForm.setVisible(true);
+    }//GEN-LAST:event_addGrantMenuActionPerformed
+
+    private void statDivisionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statDivisionMenuActionPerformed
+         new ApplicantByDivisionDialog(this,true).setVisible(true);
+    }//GEN-LAST:event_statDivisionMenuActionPerformed
+
+    private void statYearMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statYearMenuActionPerformed
+        new PermitGrantByYearDialog(this, true).setVisible(true);
+    }//GEN-LAST:event_statYearMenuActionPerformed
+
+    private void addApplicantMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addApplicantMenuActionPerformed
+        ApplicantForm applicantForm = new ApplicantForm();
+        applicantForm.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(applicantForm);
+        applicantForm.setVisible(true);
+        applicantForm.requestFoucsForm();
+    }//GEN-LAST:event_addApplicantMenuActionPerformed
+
+    private void editApplicantMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editApplicantMenuActionPerformed
+        ApplicantForm applicantForm = new ApplicantForm(2);
+        applicantForm.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(applicantForm);
+        applicantForm.setVisible(true);
+        applicantForm.requestFoucsForm();
+    }//GEN-LAST:event_editApplicantMenuActionPerformed
+
+    private void viewAllAppMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllAppMenuActionPerformed
+        ApplicantForm applicantForm = new ApplicantForm(1);
+        applicantForm.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(applicantForm);
+        applicantForm.setVisible(true);
+        applicantForm.requestFoucsForm();
+    }//GEN-LAST:event_viewAllAppMenuActionPerformed
+
+    private void addPermitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPermitMenuActionPerformed
+        PermitForm permitForm = new PermitForm();
+        permitForm.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(permitForm);
+        permitForm.setVisible(true);
+    }//GEN-LAST:event_addPermitMenuActionPerformed
+
+    private void statLandMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statLandMenuActionPerformed
+        new LandsReportDialog(this, true).setVisible(true);
+    }//GEN-LAST:event_statLandMenuActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //as if cancel option clicked before,
+        int result=JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?");
+        if(result==JOptionPane.YES_OPTION){
+            this.dispose();
+        }else{
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
+    }//GEN-LAST:event_formWindowClosing
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_1) {
+            addNewApplicantButton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_2) {
+            addnewpermitbutton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_3) {
+            addnewgrantbutton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_4) {
+            addnewlandbutton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_5) {
+            addcertificationbutton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_6) {
+            GramaNiladariDivisionInfoButton.doClick();
+        } else if (evt.getKeyCode() == KeyEvent.VK_7) {
+            changegrantownershipbutton.doClick();
+        }
+    }//GEN-LAST:event_formKeyReleased
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        new Calculator().setVisible(true);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void CalenderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalenderButtonActionPerformed
+        new Calender(this, true).setVisible(true);
+    }//GEN-LAST:event_CalenderButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1115,25 +1306,31 @@ new ChangeGrantOwnershipForm().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddNewApplicantButton;
     private javax.swing.JButton CalenderButton;
     private javax.swing.JButton ExitButton;
     private javax.swing.JButton GramaNiladariDivisionInfoButton;
     private javax.swing.JMenu Grant;
     private javax.swing.JButton LogOutButton;
     private javax.swing.JButton REminderButton;
+    private javax.swing.JMenuItem addApplicantMenu;
+    private javax.swing.JMenuItem addGrantMenu;
+    private javax.swing.JButton addNewApplicantButton;
+    private javax.swing.JMenuItem addPermitMenu;
     private javax.swing.JButton addcertificationbutton;
     private javax.swing.JButton addnewgrantbutton;
     private javax.swing.JButton addnewlandbutton;
     private javax.swing.JButton addnewpermitbutton;
     private javax.swing.ButtonGroup applicantSearchSet;
     private javax.swing.JMenuItem backUpMenu;
+    private javax.swing.JMenuItem changeOwnGraMenu;
+    private javax.swing.JMenuItem changeOwnPerMenu;
     private javax.swing.JMenuItem changePasswordMenu;
     private javax.swing.JButton changegrantownershipbutton;
     private javax.swing.JMenuItem createNewUserMenu;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JPanel desktopJPanel;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem editApplicantMenu;
     private javax.swing.JButton goButton;
     private javax.swing.ButtonGroup grantSearchSet;
     private javax.swing.ButtonGroup importantButtonSet;
@@ -1156,22 +1353,15 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1182,6 +1372,8 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.ButtonGroup landSearchSet;
+    private javax.swing.JMenuItem nomGraSuccessorMenu;
+    private javax.swing.JMenuItem nomPerSuccessorMenu;
     private javax.swing.ButtonGroup permitSearchSet;
     private javax.swing.JMenuItem restoreMenu;
     private javax.swing.ButtonGroup searchButtonSet;
@@ -1190,11 +1382,15 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private javax.swing.JPanel searchPanel1;
     private javax.swing.JComboBox searchSetCombo;
     private javax.swing.JPanel shortcutAccessPanel;
+    private javax.swing.JMenuItem statDivisionMenu;
+    private javax.swing.JMenuItem statLandMenu;
+    private javax.swing.JMenuItem statYearMenu;
     private javax.swing.JMenu systemMenu;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JPanel userLogPanel;
     private javax.swing.JLabel username;
     private javax.swing.JPanel userpanel;
+    private javax.swing.JMenuItem viewAllAppMenu;
     private javax.swing.JMenuItem viewAllUsersMenu;
     // End of variables declaration//GEN-END:variables
 }

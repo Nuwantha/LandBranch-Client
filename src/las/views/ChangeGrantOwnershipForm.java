@@ -40,6 +40,10 @@ public class ChangeGrantOwnershipForm extends javax.swing.JDialog {
     public ChangeGrantOwnershipForm() {
         
         initComponents();
+        
+        setLocationRelativeTo(null);
+        setTitle("Change Grant Ownership");
+        
           try {
             Connector sConnector = Connector.getSConnector();
             GrantController=sConnector.getGrantController();

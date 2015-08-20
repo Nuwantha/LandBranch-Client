@@ -23,11 +23,13 @@ public class StartSplash extends javax.swing.JFrame {
      */
     public StartSplash() {
         initComponents();
-        setLocationRelativeTo(null);
         setSize(400, 300);
+        setLocationRelativeTo(null);
+        
+        
         setResizable(false);
         setTitle("Welcome to LandBranch Management System");
-        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS.jpg"));
+        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
         setIconImage(icon1.getImage());
         
          progressbar.setForeground(Color.DARK_GRAY);
@@ -38,7 +40,7 @@ public class StartSplash extends javax.swing.JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                value +=2;
+                value +=5;
                 progressbar.setValue(value);
 
                 if (value < 10) {
@@ -54,9 +56,8 @@ public class StartSplash extends javax.swing.JFrame {
                 } else if (value < 85) {
                     textLabel.setText("Starting ..");
                 } else if (value ==100) {
-                    dispose();
                     new LoginForm().setVisible(true);
-
+                    dispose();
                 }
             }
         });
@@ -84,14 +85,14 @@ public class StartSplash extends javax.swing.JFrame {
         jPanel1.add(progressbar);
         progressbar.setBounds(20, 50, 350, 30);
 
-        textLabel.setBackground(new java.awt.Color(102, 0, 0));
-        textLabel.setFont(new java.awt.Font("SansSerif", 3, 36)); // NOI18N
+        textLabel.setBackground(new java.awt.Color(51, 51, 51));
+        textLabel.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         textLabel.setForeground(new java.awt.Color(255, 255, 255));
         textLabel.setOpaque(true);
         jPanel1.add(textLabel);
         textLabel.setBounds(20, 120, 350, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logback.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logback1.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(4, 4, 390, 290);
 
@@ -99,11 +100,11 @@ public class StartSplash extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
         );
 
         pack();
