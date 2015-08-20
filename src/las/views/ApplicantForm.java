@@ -40,7 +40,8 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
      */
     public ApplicantForm() {
         initComponents();
-        
+        edit_DOB_test.setEditable(false);
+        regNotext.setEditable(false);
           try {
             Connector sConnector = Connector.getSConnector();
             ClientController=sConnector.getClientController();
@@ -76,6 +77,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         search_unmarried_sons.setEditable(false);
         search_nic_combo.setEditable(true);
         edit_nic_combo.setEditable(true);
+        birthdaytext.setEditable(false);
         /*search_nic_combo.setEditable(true);
          registerButton.setEnabled(false);
          search_DOB_test.setEditable(false);
@@ -193,10 +195,11 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         namenotvalidlabel = new javax.swing.JLabel();
         nicnotvalidlabel = new javax.swing.JLabel();
         phonenumnotvalidlabel = new javax.swing.JLabel();
-        birthdayChooser1 = new org.freixas.jcalendar.JCalendarCombo();
         annualIncomeText = new javax.swing.JTextField();
         incomenotvalidlabel = new javax.swing.JLabel();
         AnnualIncome = new javax.swing.JLabel();
+        birthdaytext = new javax.swing.JTextField();
+        Generate = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         personalDetailPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -244,6 +247,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         edit_nic_combo = new javax.swing.JComboBox();
         jPanel10 = new javax.swing.JPanel();
         edit_update_buttun = new javax.swing.JButton();
+        deletebutton = new javax.swing.JButton();
         editnamenotvalidlabel = new javax.swing.JLabel();
         editphonenonotvalidlabel = new javax.swing.JLabel();
         editbirthdaynotvalidlabel = new javax.swing.JLabel();
@@ -522,7 +526,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(578, Short.MAX_VALUE)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -668,7 +672,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
                 .addGroup(childrenCountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(marriedChildrenCountSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(unmarriedChildrenCountSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         childrenCountPanelLayout.setVerticalGroup(
             childrenCountPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -693,17 +697,6 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         phonenumnotvalidlabel.setForeground(new java.awt.Color(204, 0, 0));
         phonenumnotvalidlabel.setText("Not Valid");
 
-        birthdayChooser1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                birthdayChooser1ActionPerformed(evt);
-            }
-        });
-        birthdayChooser1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                birthdayChooser1KeyReleased(evt);
-            }
-        });
-
         annualIncomeText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 annualIncomeTextKeyReleased(evt);
@@ -714,6 +707,18 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         incomenotvalidlabel.setText("Not Valid");
 
         AnnualIncome.setText("Estimated Annual Income: Rs.");
+
+        Generate.setText("Generate");
+        Generate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerateActionPerformed(evt);
+            }
+        });
+        Generate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GenerateKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout personalDetailPanelLayout = new javax.swing.GroupLayout(personalDetailPanel);
         personalDetailPanel.setLayout(personalDetailPanelLayout);
@@ -735,11 +740,6 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(personalDetailPanelLayout.createSequentialGroup()
-                                .addComponent(marriedStatusRButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(singleStatusRButton)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(personalDetailPanelLayout.createSequentialGroup()
                                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(personalDetailPanelLayout.createSequentialGroup()
                                         .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -752,10 +752,19 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
                                             .addComponent(namenotvalidlabel)
                                             .addComponent(nicnotvalidlabel)
                                             .addComponent(phonenumnotvalidlabel)))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(birthdayChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(childrenCountPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(childrenCountPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(personalDetailPanelLayout.createSequentialGroup()
+                                .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(birthdaytext, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(personalDetailPanelLayout.createSequentialGroup()
+                                        .addComponent(marriedStatusRButton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(singleStatusRButton)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Generate)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalDetailPanelLayout.createSequentialGroup()
                         .addComponent(AnnualIncome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -797,8 +806,10 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Birthday)
-                    .addComponent(birthdayChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
+                    .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(birthdaytext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Generate)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Status)
                     .addComponent(marriedStatusRButton)
@@ -818,10 +829,9 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
             NewApplicantDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NewApplicantDetailPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(NewApplicantDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(personalDetailPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(personalDetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         NewApplicantDetailPanelLayout.setVerticalGroup(
             NewApplicantDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -845,7 +855,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
             newApplicantTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newApplicantTabLayout.createSequentialGroup()
                 .addComponent(NewApplicantDetailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 4, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Add new applicant", newApplicantTab);
@@ -1186,20 +1196,31 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
             }
         });
 
+        deletebutton.setText("Delete");
+        deletebutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebuttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(605, Short.MAX_VALUE)
+                .addContainerGap(615, Short.MAX_VALUE)
                 .addComponent(edit_update_buttun, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deletebutton)
+                .addGap(24, 24, 24))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(edit_update_buttun)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edit_update_buttun)
+                    .addComponent(deletebutton))
                 .addGap(33, 33, 33))
         );
 
@@ -1511,10 +1532,7 @@ public void EnableAddButton(){
         String nic = nicText.getText();
         String telephoneNumber = telephoneText.getText();
         String address = addressText.getText();
-        Date date = birthdayChooser1.getDate();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
-        String DOB = simpleDateFormat.format(date);
-        System.out.println(DOB);
+        String DOB=birthdaytext.getText();
         if (singleStatusRButton.isSelected()) {
             isMarried = 0;
         }
@@ -1537,7 +1555,11 @@ public void EnableAddButton(){
             phonenumnotvalidlabel.setVisible(true);
         } else if (!PatternChecker.checkDecimaldirect(annualIncomeText.getText())) {
             incomenotvalidlabel.setVisible(true);
-        } else {
+        }
+        else if (birthdaytext.getText().trim().length()==0) {
+            JOptionPane.showMessageDialog(rootPane, "Birthday Is Not Generated.");
+        }
+        else {
             Client client = new Client(nic, aplicantName, DOB, telephoneNumber, address, annualincome, 0, 0, isMarried, marriedSons, unmarriedSons);
             try {
                 boolean addNewClient = ClientController.addNewClient(client);
@@ -1664,9 +1686,9 @@ public void EnableAddButton(){
         EnableAddButton();
         if (evt.getKeyCode() == KeyEvent.VK_ENTER && addressText.getText().trim().length() != 0) {
 
-            birthdayChooser1.requestFocus();
+            Generate.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            birthdayChooser1.requestFocus();
+             Generate.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             telephoneText.requestFocus();
         }
@@ -1703,7 +1725,7 @@ public void EnableAddButton(){
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             marriedChildrenCountSpinner.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            birthdayChooser1.requestFocus();
+             Generate.requestFocus();
 
         } else if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             singleStatusRButton.requestFocus();
@@ -1720,7 +1742,7 @@ public void EnableAddButton(){
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             annualIncomeText.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            birthdayChooser1.requestFocus();
+             Generate.requestFocus();
 
         } else if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             marriedStatusRButton.requestFocus();
@@ -1775,24 +1797,6 @@ public void EnableAddButton(){
         }
     }//GEN-LAST:event_annualIncomeTextKeyReleased
 
-    private void birthdayChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birthdayChooser1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_birthdayChooser1ActionPerformed
-
-    private void birthdayChooser1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_birthdayChooser1KeyReleased
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-
-            marriedStatusRButton.requestFocus();
-        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            marriedStatusRButton.requestFocus();
-        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            addressText.requestFocus();
-
-        }
-    }//GEN-LAST:event_birthdayChooser1KeyReleased
-
     private void edit_nic_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_nic_comboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edit_nic_comboActionPerformed
@@ -1824,7 +1828,7 @@ public void EnableAddButton(){
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER && edit_addressText.getText().trim().length() != 0) {
 
-            edit_DOB_test.requestFocus();
+            edit_marriedStatusRButton.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             edit_DOB_test.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
@@ -1835,19 +1839,7 @@ public void EnableAddButton(){
     private void edit_DOB_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edit_DOB_testKeyReleased
         // TODO add your handling code here:
         editbirthdaynotvalidlabel.setVisible(false);
-        String newtext = PatternChecker.checkDate(edit_DOB_test.getText());
-        edit_DOB_test.setText(newtext);
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.birthdayChecker(edit_DOB_test.getText())) {
-                edit_marriedStatusRButton.requestFocus();
-            } else {
-                editbirthdaynotvalidlabel.setVisible(true);
-            }
-        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            edit_marriedStatusRButton.requestFocus();
-        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            edit_addressText.requestFocus();
-        }
+        
     }//GEN-LAST:event_edit_DOB_testKeyReleased
 
     private void edit_marriedStatusRButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edit_marriedStatusRButtonKeyReleased
@@ -1858,7 +1850,7 @@ public void EnableAddButton(){
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             edit_marided_sons.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            edit_DOB_test.requestFocus();
+            edit_addressText.requestFocus();
 
         } else if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             edit_singleStatusRButton.requestFocus();
@@ -1874,7 +1866,7 @@ public void EnableAddButton(){
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             edit_marided_sons.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            edit_DOB_test.requestFocus();
+            edit_addressText.requestFocus();
 
         } else if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             edit_marriedStatusRButton.requestFocus();
@@ -1958,6 +1950,81 @@ public void EnableAddButton(){
         // TODO add your handling code here:
     }//GEN-LAST:event_search_nic_comboKeyReleased
 
+    private void GenerateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GenerateKeyReleased
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+             addressText.requestFocus();
+
+        } else if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            marriedStatusRButton.requestFocus();
+
+        }
+    }//GEN-LAST:event_GenerateKeyReleased
+
+    private void GenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateActionPerformed
+        // TODO add your handling code here:
+        if(PatternChecker.checkNICdirect(nicText.getText())){
+            birthdaytext.setText(PatternChecker.getBirthday(nicText.getText()));
+        }
+        else{
+            nicnotvalidlabel.setVisible(true);
+        }
+    }//GEN-LAST:event_GenerateActionPerformed
+
+    private void deletebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebuttonActionPerformed
+        // TODO add your handling code here:
+        int showConfirmDialog = JOptionPane.showConfirmDialog(this, "Do you want to Delete?");
+        if (showConfirmDialog == 0) {
+            int isMarried = 1;
+            String applicantNumber = regNotext.getText();
+            String aplicantName = edit_nameText.getText();
+            String nic = String.valueOf(edit_nic_combo.getSelectedItem());
+            String telephoneNumber = edit_telephoneText.getText();
+            String address = edit_addressText.getText();
+            //Date date = birthdayChooser.getDate();
+            //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
+            //String DOB = simpleDateFormat.format(date);
+            String DOB = edit_DOB_test.getText();
+            if (edit_singleStatusRButton.isSelected()) {
+                isMarried = 0;
+            }
+            int marriedSons = 0;
+            int unmarriedSons = 0;
+            double annualincome = 0;
+            try {
+                marriedSons = Integer.parseInt(edit_marided_sons.getText());
+            } catch (Exception e) {
+                editmarriedchildrennotvalidlabel.setEnabled(true);
+            }
+            try {
+                unmarriedSons = Integer.parseInt(edit_unmarried_sons.getText());
+            } catch (Exception e) {
+                editunmarriedchildrennotvalidlabel.setEnabled(true);
+            }
+            try {
+                annualincome = Double.parseDouble(edit_annualIncome.getText());
+            } catch (Exception e) {
+                editincomenotvalidlabel.setVisible(true);
+            }
+
+            Client client = new Client(nic, aplicantName, DOB, telephoneNumber, address, annualincome, 0, 0, isMarried, marriedSons, unmarriedSons);
+                    try {
+                        boolean updateClient = ClientController.deleteClient(client);
+                        if (updateClient) {
+                            JOptionPane.showMessageDialog(this, "Deleted successfully");
+                        } else {
+                            JOptionPane.showMessageDialog(this, "doesn't Delete");
+                            editincomenotvalidlabel.setVisible(false);
+                        }
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+                        //JOptionPane.showMessageDialog(this, "Cannot Delete");
+                        editincomenotvalidlabel.setVisible(false);
+                    }
+        } 
+            
+        
+    }//GEN-LAST:event_deletebuttonActionPerformed
+
     public void getResidenceData() { //to accept data from current residence detail form
 
     }
@@ -1995,6 +2062,7 @@ public void EnableAddButton(){
     private javax.swing.JLabel AnnualIncome;
     private javax.swing.JLabel Birthday;
     private javax.swing.JPanel CurrentResidencePanel;
+    private javax.swing.JButton Generate;
     private javax.swing.JLabel NIC;
     private javax.swing.JLabel Name;
     private javax.swing.JPanel NewApplicantDetailPanel;
@@ -2005,11 +2073,12 @@ public void EnableAddButton(){
     private javax.swing.JLabel Status;
     private javax.swing.JTextArea addressText;
     private javax.swing.JTextField annualIncomeText;
-    private org.freixas.jcalendar.JCalendarCombo birthdayChooser1;
+    private javax.swing.JTextField birthdaytext;
     private javax.swing.JPanel childrenCountPanel;
     private javax.swing.JPanel childrenCountPanel1;
     private javax.swing.JPanel childrenCountPanel2;
     private javax.swing.JLabel currentResidenceLabel;
+    private javax.swing.JButton deletebutton;
     private javax.swing.JTextField edit_DOB_test;
     private javax.swing.JTextArea edit_addressText;
     private javax.swing.JTextField edit_annualIncome;

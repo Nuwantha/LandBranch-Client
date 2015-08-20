@@ -1322,11 +1322,11 @@ public void EnableUpdate(){
     }
 }
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-       
+       try{
         if(!PatternChecker.checkStringdirect(update_land_name.getText())){
            editlandnamenotvalidlabel.setVisible(true);
        }
-       else if(update_land_name.getText().trim().length()==0){
+       else if(update_land_name.getText().trim().length()==0  ){
            editlandnamenotvalidlabel.setVisible(true);
        }
        else{
@@ -1334,11 +1334,12 @@ public void EnableUpdate(){
         if (showConfirmDialog == 0) {
             Land land = new Land(String.valueOf(update_planNumber_combo.getSelectedItem()), update_land_name.getText(), (String) update_gnd_combo.getSelectedItem(), update_west_test.getText(), update_east_test.getText(), update_south_test.getText(), update_north_test.getText());
             ArrayList<Lot> lotList = new ArrayList();
-
+            
             for (int i = 0; i < update_lot_table.getRowCount(); i++) {
                 Lot lot = new Lot((String) update_lot_table.getValueAt(i, 0), Integer.parseInt(String.valueOf(update_lot_table.getValueAt(i, 1))),Integer.parseInt(String.valueOf( update_lot_table.getValueAt(i, 3))), Integer.parseInt(String.valueOf( update_lot_table.getValueAt(i, 2))),  land);
                 lotList.add(lot);
             }
+               
             land.setLotList(lotList);
             try {
                 boolean updateLand = LandController.updateLand(land);
@@ -1359,7 +1360,10 @@ public void EnableUpdate(){
                 Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-       }
+       }}
+       catch(Exception e){
+                JOptionPane.showMessageDialog(this, "Please Enter Data In Correct Formats.");
+            }
 
     }//GEN-LAST:event_updateButtonActionPerformed
 

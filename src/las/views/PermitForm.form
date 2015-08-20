@@ -966,7 +966,7 @@
                               <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel7" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1021,34 +1021,39 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel7" max="32767" attributes="0"/>
-                                      <Component id="jLabel4" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="AddGNDNo" alignment="0" pref="121" max="32767" attributes="0"/>
-                                      <Component id="AddGND" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel5" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="addpermit_permit_issue_dateChooser" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="addpermit_permit_numberTest" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel7" max="32767" attributes="0"/>
+                                              <Component id="jLabel4" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="AddGNDNo" alignment="0" pref="121" max="32767" attributes="0"/>
+                                              <Component id="AddGND" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel5" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="generatePemitNumberButtun" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="addpermit_permit_numberTest" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="generatePemitNumberButtun" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="addpermit_permit_issue_dateChooser" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1557,6 +1562,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1694,7 +1700,8 @@
                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="addpermit_address" min="-2" pref="160" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="87" max="32767" attributes="0"/>
+                                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                                      <Component id="addressinvalidlabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1715,12 +1722,20 @@
                                   <Component id="addpermit_NOS_nic_test" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nicInvalidLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addpermit_address" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addpermit_address" min="-2" pref="44" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                      <Component id="addressinvalidlabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="38" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1789,6 +1804,14 @@
                         <Property name="text" type="java.lang.String" value="Name is invalid"/>
                       </Properties>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="addressinvalidlabel">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Invalid"/>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -1799,17 +1822,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="265" max="32767" attributes="0"/>
+                          <EmptySpace pref="263" max="32767" attributes="0"/>
                           <Component id="addpermit_add_permit_button" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="addpermit_add_permit_button" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                          <Component id="addpermit_add_permit_button" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

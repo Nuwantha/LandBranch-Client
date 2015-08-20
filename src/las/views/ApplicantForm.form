@@ -490,7 +490,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="NewApplicantDetailPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -503,12 +503,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="personalDetailPanel" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jPanel2" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
+                          <Component id="personalDetailPanel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -530,7 +528,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="578" max="32767" attributes="0"/>
                                   <Component id="registerButton" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -597,12 +595,6 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="marriedStatusRButton" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="singleStatusRButton" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
                                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -619,10 +611,22 @@
                                                           </Group>
                                                       </Group>
                                                       <Component id="jScrollPane1" min="-2" pref="295" max="-2" attributes="0"/>
-                                                      <Component id="birthdayChooser1" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="childrenCountPanel" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="birthdaytext" alignment="0" max="32767" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="marriedStatusRButton" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="singleStatusRButton" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="Generate" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -678,9 +682,12 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="Birthday" min="-2" max="-2" attributes="0"/>
-                                      <Component id="birthdayChooser1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="birthdaytext" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Generate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="Status" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="marriedStatusRButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -821,7 +828,7 @@
                                           <Component id="marriedChildrenCountSpinner" min="-2" pref="41" max="-2" attributes="0"/>
                                           <Component id="unmarriedChildrenCountSpinner" min="-2" pref="41" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="142" max="32767" attributes="0"/>
+                                      <EmptySpace pref="162" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -892,12 +899,6 @@
                             <Property name="text" type="java.lang.String" value="Not Valid"/>
                           </Properties>
                         </Component>
-                        <Component class="org.freixas.jcalendar.JCalendarCombo" name="birthdayChooser1">
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="birthdayChooser1ActionPerformed"/>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="birthdayChooser1KeyReleased"/>
-                          </Events>
-                        </Component>
                         <Component class="javax.swing.JTextField" name="annualIncomeText">
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="annualIncomeTextKeyReleased"/>
@@ -915,6 +916,17 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Estimated Annual Income: Rs."/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="birthdaytext">
+                        </Component>
+                        <Component class="javax.swing.JButton" name="Generate">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Generate"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GenerateActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GenerateKeyReleased"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1562,9 +1574,11 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="605" max="32767" attributes="0"/>
+                              <EmptySpace pref="615" max="32767" attributes="0"/>
                               <Component id="edit_update_buttun" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="deletebutton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1572,7 +1586,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="edit_update_buttun" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="edit_update_buttun" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deletebutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1586,6 +1603,14 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edit_update_buttunActionPerformed"/>
                         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="edit_update_buttunKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="deletebutton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Delete"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebuttonActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>

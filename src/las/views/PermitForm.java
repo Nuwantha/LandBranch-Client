@@ -109,6 +109,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
         cancelpermit_NOS_address_test.setEditable(false);
         cancelpermit_cancel_permit_button.setEnabled(false);
         add_permit_division_number_combo.setEnabled(true);
+        addressinvalidlabel.setVisible(false);
         //cancel permit
         cancelpermit_permit_number_combo.setEditable(true);
         JTextComponent editorCancelPemitPNCombo = (JTextComponent) cancelpermit_permit_number_combo.getEditor().getEditorComponent();
@@ -334,6 +335,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
         addpermit_NOS_address_test = new javax.swing.JTextArea();
         nicInvalidLabel = new javax.swing.JLabel();
         nameinvalidlabel = new javax.swing.JLabel();
+        addressinvalidlabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addpermit_add_permit_button = new javax.swing.JButton();
 
@@ -1019,25 +1021,28 @@ public class PermitForm extends javax.swing.JInternalFrame {
                                     .addComponent(AddNotSurveyedSouth)
                                     .addComponent(AddNotSurveyedNorth)))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AddGNDNo, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .addComponent(AddGND)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addpermit_permit_issue_dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(addpermit_permit_numberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AddGNDNo, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                    .addComponent(AddGND)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(generatePemitNumberButtun)))))
-                .addGap(18, 18, 18))
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(addpermit_permit_numberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(generatePemitNumberButtun))
+                                    .addComponent(addpermit_permit_issue_dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1351,6 +1356,9 @@ public class PermitForm extends javax.swing.JInternalFrame {
         nameinvalidlabel.setForeground(new java.awt.Color(255, 0, 0));
         nameinvalidlabel.setText("Name is invalid");
 
+        addressinvalidlabel.setForeground(new java.awt.Color(255, 0, 0));
+        addressinvalidlabel.setText("Invalid");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1374,7 +1382,8 @@ public class PermitForm extends javax.swing.JInternalFrame {
                         .addComponent(jLabel12)
                         .addGap(37, 37, 37)
                         .addComponent(addpermit_address, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 87, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(addressinvalidlabel)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1389,11 +1398,16 @@ public class PermitForm extends javax.swing.JInternalFrame {
                     .addComponent(jLabel11)
                     .addComponent(addpermit_NOS_nic_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nicInvalidLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(addpermit_address, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(addpermit_address, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(addressinvalidlabel)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1479,7 +1493,8 @@ public class PermitForm extends javax.swing.JInternalFrame {
                     .addComponent(jLabel37)
                     .addComponent(add_permit_no_of_children_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         addpermit_add_permit_button.setText("Add Permit");
@@ -1499,15 +1514,15 @@ public class PermitForm extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(265, Short.MAX_VALUE)
+                .addContainerGap(263, Short.MAX_VALUE)
                 .addComponent(addpermit_add_permit_button)
-                .addGap(21, 21, 21))
+                .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(addpermit_add_permit_button)
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(addpermit_add_permit_button))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1534,7 +1549,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -1601,7 +1616,11 @@ public class PermitForm extends javax.swing.JInternalFrame {
             nameinvalidlabel.setVisible(true);
         } else if (!PatternChecker.checkNICdirect(addpermit_NOS_nic_test.getText())) {
             nicInvalidLabel.setVisible(true);
-        } else {
+        } 
+        else if(addpermit_NOS_address_test.getText().trim().length()==0){
+            addressinvalidlabel.setVisible(true);
+        }
+        else {
             try {
                 NominatedSuccessor nominatedSuccessor = new NominatedSuccessor(addpermit_NOS_nic_test.getText(), addpermit_NOS_name_test.getText(), addpermit_NOS_address_test.getText());
                 Client searchClient = ClientController.searchClient(String.valueOf(add_permit_nic_combo.getSelectedItem()));
@@ -1632,6 +1651,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
                     add_permit_lot_number_Combo.setSelectedItem(null);
                     add_permit_marriedStatusRButton.setSelected(false);
                     add_permit_singleStatusRButton.setSelected(false);
+                    add_permit_nic_combo.removeAll();
 
                 } else {
                     JOptionPane.showMessageDialog(this, "permit does not added successfully");
@@ -1948,6 +1968,8 @@ public class PermitForm extends javax.swing.JInternalFrame {
 
     private void addpermit_NOS_address_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_address_testKeyReleased
         // TODO add your handling code here:
+        EnableGererateButton();
+        addressinvalidlabel.setVisible(false);
         if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             addpermit_add_permit_button.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
@@ -2006,10 +2028,11 @@ public class PermitForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cancelpermit_singleStatusRButtonStateChanged
 
     public void EnableGererateButton() {
-        if (add_permit_division_name_test.getText().trim().length() != 0 && add_permit_landName_test.getText().trim().length() != 0 && add_permit_nameText.getText().trim().length() != 0
+        if (add_permit_division_name_test.getText().trim().length() != 0 && add_permit_nameText.getText().trim().length() != 0 && add_permit_landName_test.getText().trim().length() != 0 && add_permit_nameText.getText().trim().length() != 0
                 && add_permit_acres_test.getText().trim().length() != 0 && addpermit_NOS_name_test.getText().trim().length() != 0 && addpermit_NOS_nic_test.getText().trim().length() != 0 && addpermit_NOS_address_test.getText().trim().length() != 0) {
             generatePemitNumberButtun.setEnabled(true);
         }
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AddGND;
@@ -2048,6 +2071,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane addpermit_address;
     private org.freixas.jcalendar.JCalendarCombo addpermit_permit_issue_dateChooser;
     private javax.swing.JTextField addpermit_permit_numberTest;
+    private javax.swing.JLabel addressinvalidlabel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cancelPermitLotNumberTest;
     private javax.swing.JTextField cancelPermitPlanNumberTest;

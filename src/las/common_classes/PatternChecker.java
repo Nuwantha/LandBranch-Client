@@ -227,4 +227,27 @@ public static boolean checkNICdirect(String nicText) {
         return text;
 
     }
+     public static String getBirthday(String id){
+        
+        int month[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int year=1900 + Integer.parseInt(id.substring(0, 2));
+        int d = Integer.parseInt(id.substring(2, 5));
+        if (d > 500) {
+            d=d - 500;
+        } 
+        int mo = 0, da = 0;
+        int days = d;
+        for (int i = 0; i < month.length; i++) {
+            if (days < month[i]) {
+                mo = i + 1;
+                da = days;
+                break;
+            } else {
+                days = days - month[i];
+            }
+        }
+        String text=""+year+"-"+""+mo+"-"+""+da;
+        return text;
+        
+    }
 }

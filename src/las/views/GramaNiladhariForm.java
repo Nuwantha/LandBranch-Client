@@ -520,6 +520,13 @@ public class GramaNiladhariForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_gnd_update_comboItemStateChanged
 
     private void gnd_update_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gnd_update_buttonActionPerformed
+        if(!PatternChecker.checkStringdirect(gnd_name_test.getText())){
+            gnnamenotvalidlabel.setEnabled(true);
+        }
+        else if(gnd_zone_test.getText().trim().length()==0 || gnd_name_test.getText().trim().length()==0 || gnd_gramaniladari_name.getText().trim().length()==0){
+            JOptionPane.showMessageDialog(rootPane, "Fill The Blanks.");
+        }
+        else{
         int showConfirmDialog = JOptionPane.showConfirmDialog(rootPane, "Do yo want to update");
         if (showConfirmDialog == 0) {
             GramaNiladariDivision gramaNiladariDivision = new GramaNiladariDivision((String) gnd_update_combo.getSelectedItem(), gnd_name_test.getText(), gnd_zone_test.getText(), gnd_gramaniladari_name.getText());
@@ -539,6 +546,7 @@ public class GramaNiladhariForm extends javax.swing.JInternalFrame {
             } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                 Logger.getLogger(GramaNiladhariForm.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
         }
     }//GEN-LAST:event_gnd_update_buttonActionPerformed
 
