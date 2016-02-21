@@ -212,9 +212,13 @@
                                       <Component id="singleStatusRButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane1" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                                  <Component id="birthdayChooser1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="DOBText" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="Generate" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <EmptySpace pref="29" max="32767" attributes="0"/>
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -249,12 +253,13 @@
                                   <Component id="addresslabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="Birthday" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="birthdayChooser1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DOBText" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Generate" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="Status" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="marriedStatusRButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -272,7 +277,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -451,38 +456,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="AnnualIncome" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="Occupation" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="AnnualIncome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="occupationText" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="occupationnotvalidlabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="annualIncomeText" min="-2" pref="94" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="incomenotvalidlabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="annualIncomeText" min="-2" pref="94" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="incomenotvalidlabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Occupation" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="occupationText" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="occupationnotvalidlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="AnnualIncome" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -496,17 +481,6 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="Occupation">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Occupation:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="occupationText">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="occupationTextActionPerformed"/>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="occupationTextKeyReleased"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JLabel" name="AnnualIncome">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Estimated Annual Income: Rs."/>
@@ -516,14 +490,6 @@
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="annualIncomeTextKeyReleased"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="occupationnotvalidlabel">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Not Valid"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="incomenotvalidlabel">
                   <Properties>
@@ -568,7 +534,16 @@
                 <Property name="text" type="java.lang.String" value="name is invalid"/>
               </Properties>
             </Component>
-            <Component class="org.freixas.jcalendar.JCalendarCombo" name="birthdayChooser1">
+            <Component class="javax.swing.JTextField" name="DOBText">
+            </Component>
+            <Component class="javax.swing.JButton" name="Generate">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Generate"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GenerateActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GenerateKeyReleased"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

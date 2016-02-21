@@ -931,9 +931,15 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
             }
         });
 
+        search_nic_combo.setName(""); // NOI18N
         search_nic_combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 search_nic_comboItemStateChanged(evt);
+            }
+        });
+        search_nic_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_nic_comboActionPerformed(evt);
             }
         });
         search_nic_combo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1452,10 +1458,11 @@ public void EnableAddButton(){
         }
     }//GEN-LAST:event_search_nic_comboItemStateChanged
 
-    private void searchClient(String nic) throws ClassNotFoundException, SQLException,RemoteException {
+    public void searchClient(String nic) throws ClassNotFoundException, SQLException,RemoteException {
 
         Client searchClient = ClientController.searchClient(nic);
         if (searchClient != null) {
+            search_nic_combo.setSelectedItem(nic);
             search_nameText.setText(searchClient.getClientName());
             search_DOB_test.setText(searchClient.getBirthday());
             search_marided_sons.setText(String.valueOf(searchClient.getNumberOfMarriedSons()));
@@ -1472,6 +1479,29 @@ public void EnableAddButton(){
 
     }
 
+    public void editClient(String nic){
+         try {
+            Client searchClient = ClientController.searchClient(nic);
+            if (searchClient != null) {
+                edit_nic_combo.setSelectedItem(nic);
+                edit_nameText.setText(searchClient.getClientName());
+                edit_DOB_test.setText(searchClient.getBirthday());
+                edit_marided_sons.setText(String.valueOf(searchClient.getNumberOfMarriedSons()));
+                edit_telephoneText.setText(searchClient.getTelephone());
+                edit_unmarried_sons.setText(String.valueOf(searchClient.getNumberOfUnmarriedSons()));
+                if (searchClient.isMarried() == 0) {
+                    edit_singleStatusRButton.setSelected(true);
+                } else {
+                    edit_marriedStatusRButton.setSelected(true);
+                }
+                edit_annualIncome.setText(String.valueOf(searchClient.getAnnualIncome()));
+                edit_addressText.setText(searchClient.getAddress());
+            }
+        } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void search_DOB_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_DOB_testActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_DOB_testActionPerformed
@@ -1561,19 +1591,11 @@ public void EnableAddButton(){
         }
         else {
             Client client = new Client(nic, aplicantName, DOB, telephoneNumber, address, annualincome, 0, 0, isMarried, marriedSons, unmarriedSons);
-            
             try {
-                if(ClientController.searchClient(nic)==null){
-            
-                    boolean addNewClient = ClientController.addNewClient(client);
-                    if (addNewClient) {
-                        JOptionPane.showMessageDialog(rootPane, "applicant added successfully");
-                        resetFrame();
-                    }
-                }else{
-                        JOptionPane.showMessageDialog(rootPane, "you have allready added this applicant");
-                        resetFrame();
-                    
+                boolean addNewClient = ClientController.addNewClient(client);
+                if (addNewClient) {
+                    JOptionPane.showMessageDialog(rootPane, "applicant added successfully");
+                    resetFrame();
                 }
             } catch (ClassNotFoundException | SQLException|RemoteException ex) {
                 Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -2033,6 +2055,14 @@ public void EnableAddButton(){
         
     }//GEN-LAST:event_deletebuttonActionPerformed
 
+    private void search_nic_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nic_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_nic_comboActionPerformed
+
+    public void focustabbedpane(int num){
+        jTabbedPane1.setSelectedIndex(num);
+    }
+    
     public void getResidenceData() { //to accept data from current residence detail form
 
     }

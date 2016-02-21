@@ -1522,25 +1522,56 @@ public void EnableAdd(){
             }
         } catch (ClassNotFoundException | SQLException |RemoteException ex) {
             Logger.getLogger(PermitForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
-    
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }   
     }//GEN-LAST:event_search_grant_grantnoComboItemStateChanged
 
+    public void SearchGrantByNo(String num){
+         try {
+            this.choosenGrant = GrantController.searchGrant(num);
+            if (choosenGrant != null) {
+                search_grant_grantnoCombo.setSelectedItem(num);
+                Client client = choosenGrant.getClient();
+                NominatedSuccessor nominatedSuccessor = choosenGrant.getNominatedSuccessor();
+                Lot lot = choosenGrant.getLot();
+                Land land = lot.getLand();
+                String grantIssueDate = choosenGrant.getGrantIssueDate();
+                this.search_grant_issuedateText.setText(grantIssueDate);//Permit issue date need to be added
+
+                this.search_grant_division_no_text.setText(land.getDivisionNumber());
+                GramaNiladariDivision searchGND = GramaNiladariDivisionController.searchGND(land.getDivisionNumber());
+                search_grant_division_name_text.setText(searchGND.getDivisionName());
+
+                this.search_grant_landName_text.setText(land.getLandName());
+                this.search_grant_plan_no_text.setText(land.getPlanNumber());
+
+                this.search_grant_lotno_text.setText(lot.getLotNumber());
+                this.search_grant_acres_text.setText(String.valueOf(lot.getNumberOfAcres()));
+                this.search_grant_perches_text.setText(String.valueOf(lot.getNumberOfPerches()));
+                this.search_grant_roods_text.setText(String.valueOf(lot.getNumberofRoods()));
+
+                this.search_grant_owner_nic_text.setText(client.getNIC());
+                this.search_grant_ownernameText.setText(client.getClientName());
+                this.search_grantowner_telephoneText.setText(client.getTelephone());
+                this.search_grantowner_DOB_text.setText(client.getBirthday());
+                this.search_grantowner_addressText.setText(client.getAddress());
+                this.search_grant_owner_annualIncome.setText(String.valueOf(client.getAnnualIncome()));
+                this.search_grant_owner_no_of_children_text.setText(String.valueOf(client.getNumberOfMarriedSons() + client.getNumberOfUnmarriedSons()));
+                if (client.isMarried() == 1) {
+                    this.search_grant_owner_marriedStatusRButton.setSelected(true);
+                } else {
+                    this.search_grant_owner_singleStatusRButton.setSelected(true);
+                }
+                
+                this.searchgrant_S_nic_text.setText(nominatedSuccessor.getNIC_S());
+                this.searchgrant_S_name_text.setText(nominatedSuccessor.getName());
+                this.searchgrant_S_address_text.setText(nominatedSuccessor.getAddress());
+
+               
+            }
+        } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+            Logger.getLogger(PermitForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     private void viewAll_load_buttunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAll_load_buttunActionPerformed
         DefaultTableModel model = (DefaultTableModel) viewAll_table.getModel();
         model.getDataVector().removeAllElements();
@@ -1563,6 +1594,10 @@ public void EnableAdd(){
         EnableAdd();
     }//GEN-LAST:event_Add_Grant_Grant_NoKeyReleased
 
+    public void focustabbedpane(int num){
+        jTabbedPane1.setSelectedIndex(num);
+    }
+    
     private void add_grant_owner_marriedStatusRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_add_grant_owner_marriedStatusRButtonStateChanged
         // TODO add your handling code here:
          EnableAdd();
