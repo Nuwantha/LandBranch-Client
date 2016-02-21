@@ -68,14 +68,7 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         editmarriedchildrennotvalidlabel.setVisible(false);
         editunmarriedchildrennotvalidlabel.setVisible(false);
         editincomenotvalidlabel.setVisible(false);
-        search_DOB_test.setEditable(false);
-        search_addressText.setEditable(false);
-        search_annualIncome.setEditable(false);
-        search_marided_sons.setEditable(false);
-        search_nameText.setEditable(false);
-        search_telephoneText.setEditable(false);
-        search_unmarried_sons.setEditable(false);
-        search_nic_combo.setEditable(true);
+     
         edit_nic_combo.setEditable(true);
         birthdaytext.setEditable(false);
         /*search_nic_combo.setEditable(true);
@@ -91,7 +84,6 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
          search_unmarried_sons.setEditable(false);
          searchoccupationbutton.setEditable(false);*/
 
-        makeEditableComboNIC(search_nic_combo);
         makeEditableComboNIC(edit_nic_combo);
     }
 
@@ -200,29 +192,6 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
         AnnualIncome = new javax.swing.JLabel();
         birthdaytext = new javax.swing.JTextField();
         Generate = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        personalDetailPanel1 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        search_nameText = new javax.swing.JTextField();
-        search_telephoneText = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        search_addressText = new javax.swing.JTextArea();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        search_marriedStatusRButton = new javax.swing.JRadioButton();
-        search_singleStatusRButton = new javax.swing.JRadioButton();
-        childrenCountPanel1 = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        search_marided_sons = new javax.swing.JTextField();
-        search_unmarried_sons = new javax.swing.JTextField();
-        search_DOB_test = new javax.swing.JTextField();
-        search_nic_combo = new javax.swing.JComboBox();
-        jLabel32 = new javax.swing.JLabel();
-        search_annualIncome = new javax.swing.JTextField();
         personalDetailPanel2 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -860,193 +829,6 @@ public class ApplicantForm extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Add new applicant", newApplicantTab);
 
-        personalDetailPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Personal Details"));
-
-        jLabel17.setText("Name:");
-
-        jLabel24.setText("NIC :");
-
-        search_nameText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                search_nameTextKeyReleased(evt);
-            }
-        });
-
-        jLabel25.setText("Phone Number:");
-
-        jLabel26.setText("Address:");
-
-        search_addressText.setColumns(20);
-        search_addressText.setRows(5);
-        jScrollPane3.setViewportView(search_addressText);
-
-        jLabel27.setText("Birthday:");
-
-        jLabel28.setText("Status:");
-
-        statusButtonGroup.add(search_marriedStatusRButton);
-        search_marriedStatusRButton.setText("Married");
-
-        statusButtonGroup.add(search_singleStatusRButton);
-        search_singleStatusRButton.setText("Single");
-
-        childrenCountPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Number of children"));
-
-        jLabel29.setText("No. of married children:");
-
-        jLabel30.setText("No. of  unmarried children:");
-
-        javax.swing.GroupLayout childrenCountPanel1Layout = new javax.swing.GroupLayout(childrenCountPanel1);
-        childrenCountPanel1.setLayout(childrenCountPanel1Layout);
-        childrenCountPanel1Layout.setHorizontalGroup(
-            childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(childrenCountPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(search_unmarried_sons, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                    .addComponent(search_marided_sons))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        childrenCountPanel1Layout.setVerticalGroup(
-            childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(childrenCountPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(search_marided_sons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(childrenCountPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(search_unmarried_sons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-
-        search_DOB_test.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_DOB_testActionPerformed(evt);
-            }
-        });
-
-        search_nic_combo.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                search_nic_comboItemStateChanged(evt);
-            }
-        });
-        search_nic_combo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                search_nic_comboKeyReleased(evt);
-            }
-        });
-
-        jLabel32.setText("Estimated Annual Income: Rs.");
-
-        javax.swing.GroupLayout personalDetailPanel1Layout = new javax.swing.GroupLayout(personalDetailPanel1);
-        personalDetailPanel1.setLayout(personalDetailPanel1Layout);
-        personalDetailPanel1Layout.setHorizontalGroup(
-            personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel24)
-                                .addComponent(jLabel17)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28))
-                        .addGap(18, 18, 18)
-                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                                    .addComponent(search_DOB_test)
-                                    .addGap(181, 181, 181))
-                                .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                                    .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(search_nameText)
-                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                            .addComponent(search_telephoneText))
-                                        .addComponent(search_nic_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(36, 36, 36)))
-                            .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                                .addComponent(search_marriedStatusRButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(search_singleStatusRButton)
-                                .addGap(211, 211, 211)))
-                        .addComponent(childrenCountPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(54, Short.MAX_VALUE))
-                    .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(search_annualIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        personalDetailPanel1Layout.setVerticalGroup(
-            personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(personalDetailPanel1Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jLabel24))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalDetailPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(search_nic_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(search_nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel25)
-                            .addComponent(search_telephoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(childrenCountPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(search_DOB_test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(search_marriedStatusRButton)
-                    .addComponent(search_singleStatusRButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(personalDetailPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(search_annualIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(personalDetailPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(personalDetailPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Search applicant", jPanel5);
-
         personalDetailPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Personal Details"));
 
         jLabel33.setText("Name:");
@@ -1443,42 +1225,14 @@ public void EnableAddButton(){
         }
     }//GEN-LAST:event_edit_nameTextKeyReleased
 
-    private void search_nic_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_search_nic_comboItemStateChanged
-        try {
-            searchClient((String) search_nic_combo.getSelectedItem());
-
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
-            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_search_nic_comboItemStateChanged
-
     private void searchClient(String nic) throws ClassNotFoundException, SQLException,RemoteException {
 
         Client searchClient = ClientController.searchClient(nic);
         if (searchClient != null) {
-            search_nameText.setText(searchClient.getClientName());
-            search_DOB_test.setText(searchClient.getBirthday());
-            search_marided_sons.setText(String.valueOf(searchClient.getNumberOfMarriedSons()));
-            search_telephoneText.setText(searchClient.getTelephone());
-            search_unmarried_sons.setText(String.valueOf(searchClient.getNumberOfUnmarriedSons()));
-            if (searchClient.isMarried() == 0) {
-                search_singleStatusRButton.setSelected(true);
-            } else {
-                search_marriedStatusRButton.setSelected(true);
-            }
-            search_annualIncome.setText(String.valueOf(searchClient.getAnnualIncome()));
-            search_addressText.setText(searchClient.getAddress());
+            
         }
 
     }
-
-    private void search_DOB_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_DOB_testActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_DOB_testActionPerformed
-
-    private void search_nameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nameTextKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_nameTextKeyReleased
 
     private void nicTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nicTextKeyReleased
         EnableAddButton();
@@ -1576,8 +1330,7 @@ public void EnableAddButton(){
                     
                 }
             } catch (ClassNotFoundException | SQLException|RemoteException ex) {
-                Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
-
+                JOptionPane.showMessageDialog(rootPane, "check your data,invalid data have entered");
             }
         }
 
@@ -1954,10 +1707,6 @@ public void EnableAddButton(){
         }
     }//GEN-LAST:event_singleStatusRButtonStateChanged
 
-    private void search_nic_comboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_nic_comboKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_nic_comboKeyReleased
-
     private void GenerateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GenerateKeyReleased
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
@@ -2083,7 +1832,6 @@ public void EnableAddButton(){
     private javax.swing.JTextField annualIncomeText;
     private javax.swing.JTextField birthdaytext;
     private javax.swing.JPanel childrenCountPanel;
-    private javax.swing.JPanel childrenCountPanel1;
     private javax.swing.JPanel childrenCountPanel2;
     private javax.swing.JLabel currentResidenceLabel;
     private javax.swing.JButton deletebutton;
@@ -2114,21 +1862,12 @@ public void EnableAddButton(){
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -2141,7 +1880,6 @@ public void EnableAddButton(){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -2153,7 +1891,6 @@ public void EnableAddButton(){
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JSpinner jSpinner3;
@@ -2170,22 +1907,11 @@ public void EnableAddButton(){
     private javax.swing.JTextField nicText;
     private javax.swing.JLabel nicnotvalidlabel;
     private javax.swing.JPanel personalDetailPanel;
-    private javax.swing.JPanel personalDetailPanel1;
     private javax.swing.JPanel personalDetailPanel2;
     private javax.swing.JLabel phonenumnotvalidlabel;
     private javax.swing.JTextField regNotext;
     private javax.swing.JButton registerButton;
     private javax.swing.JLabel resultLabel;
-    private javax.swing.JTextField search_DOB_test;
-    private javax.swing.JTextArea search_addressText;
-    private javax.swing.JTextField search_annualIncome;
-    private javax.swing.JTextField search_marided_sons;
-    private javax.swing.JRadioButton search_marriedStatusRButton;
-    private javax.swing.JTextField search_nameText;
-    private javax.swing.JComboBox search_nic_combo;
-    private javax.swing.JRadioButton search_singleStatusRButton;
-    private javax.swing.JTextField search_telephoneText;
-    private javax.swing.JTextField search_unmarried_sons;
     private javax.swing.JRadioButton singleStatusRButton;
     private javax.swing.ButtonGroup statusButtonGroup;
     private javax.swing.JTextField telephoneText;
