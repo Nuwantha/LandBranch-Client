@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
@@ -38,52 +39,54 @@ import las.views.ApplicantForm;
  * @author Gimhani
  */
 public class SearchClientForm extends SearchForm {
+
     PopUpTable popUp;
-    
+
     LandController LandController;
     LotController LotController;
     GrantController GrantController;
     ClientController ClientController;
     PermitController PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
-    NominatedSuccessorController NominatedSuccessorController;        
-    
-    
+    NominatedSuccessorController NominatedSuccessorController;
+
     /**
      * Creates new form SearchClientForm
      */
     public SearchClientForm() {
-        
+
         initComponents();
-        
-            try {
+
+        try {
             Connector sConnector = Connector.getSConnector();
-            ClientController=sConnector.getClientController();
-            GrantController=sConnector.getGrantController();
-            PermitController=sConnector.getPermitController();
-            GramaNiladariDivisionController=sConnector.getGramaNiladariDivisionController();
-            NominatedSuccessorController=sConnector.getnomiNominatedSuccessorController();
-            LandController=sConnector.getLandController();
-            
-        } catch (RemoteException | SQLException | NotBoundException | MalformedURLException|ClassNotFoundException ex) {
+            ClientController = sConnector.getClientController();
+            GrantController = sConnector.getGrantController();
+            PermitController = sConnector.getPermitController();
+            GramaNiladariDivisionController = sConnector.getGramaNiladariDivisionController();
+            NominatedSuccessorController = sConnector.getnomiNominatedSuccessorController();
+            LandController = sConnector.getLandController();
+
+        } catch (RemoteException | SQLException | NotBoundException | MalformedURLException | ClassNotFoundException ex) {
             Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         typeText.requestFocus();
         model = (DefaultTableModel) jTable1.getModel();
     }
-    
-    public SearchClientForm(String search, String bywhat) {
+
+    public SearchClientForm(String search, String bywhat, JDesktopPane desktopPane) {
         this();
         this.bywhat = bywhat;
         this.search = search;
-        popUp=new PopUpTable(jTable1);
-        
+        this.desktopPane = desktopPane;
+        popUp = new PopUpTable(jTable1, desktopPane);
+
     }
-    public void requestFocusForm(){
+
+    public void requestFocusForm() {
         typeText.requestFocus();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -194,16 +197,16 @@ public class SearchClientForm extends SearchForm {
 
     private void typeTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_typeTextKeyReleased
         try {
-            
+
             model.getDataVector().removeAllElements();
             revalidate();
-            
+
             String text = typeText.getText();
             if (search == "Applicant" && bywhat == "By name") {
                 typeText.setText(PatternChecker.checkstring(text));
                 ArrayList<Client> clientlist = ClientController.getSimilarNames(text);
                 if (!clientlist.isEmpty()) {
-                    
+
                     for (Client client : clientlist) {
                         Permit permit = PermitController.searchPermitByClient(client.getNIC());
                         String permitNumber;
@@ -212,7 +215,7 @@ public class SearchClientForm extends SearchForm {
                         } else {
                             permitNumber = "Not given";
                         }
-                        
+
                         Grant grant = GrantController.searchGrantByClient(client.getNIC());
                         String grantNumber;
                         if (grant != null) {
@@ -231,7 +234,7 @@ public class SearchClientForm extends SearchForm {
                 typeText.setText(PatternChecker.checkNIC(text));
                 ArrayList<Client> clientlist = ClientController.getSimmilarNICs(text);
                 if (!clientlist.isEmpty()) {
-                    
+
                     for (Client client : clientlist) {
                         Permit permit = PermitController.searchPermitByClient(client.getNIC());
                         String permitNumber;
@@ -240,7 +243,7 @@ public class SearchClientForm extends SearchForm {
                         } else {
                             permitNumber = "Not given";
                         }
-                        
+
                         Grant grant = GrantController.searchGrantByClient(client.getNIC());
                         String grantNumber;
                         if (grant != null) {
@@ -255,7 +258,7 @@ public class SearchClientForm extends SearchForm {
                     jTable1.removeAll();
                 }
             }
-            
+
         } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(SearchClientForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -266,9 +269,9 @@ public class SearchClientForm extends SearchForm {
     }//GEN-LAST:event_typeTextActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-         if(SwingUtilities.isRightMouseButton(evt)){
-             popUp.show(evt.getComponent(),evt.getX(),evt.getY());
-         }
+        if (SwingUtilities.isRightMouseButton(evt)) {
+            popUp.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
     }//GEN-LAST:event_jTable1MouseClicked
 
 
@@ -282,30 +285,38 @@ public class SearchClientForm extends SearchForm {
 }
 
 class PopUpTable extends JPopupMenu {
-    
-    public PopUpTable(final JTable table) {
+
+    public PopUpTable(final JTable table, final JDesktopPane desktopPane) {
         JMenuItem viewItem = new JMenuItem("View Client");
         JMenuItem editItem = new JMenuItem("Edit Client");
         viewItem.addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("pop up");
                 int selected = table.getSelectedRow();
-                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 1));
-                ////
+                String nic = String.valueOf(((DefaultTableModel) table.getModel()).getValueAt(selected, 1));
+                ApplicantForm applicantForm = new ApplicantForm(nic);
+                applicantForm.setSize(desktopPane.getSize());
+                desktopPane.removeAll();
+                desktopPane.add(applicantForm);
+                applicantForm.setVisible(true);
+                applicantForm.requestFoucsForm();
             }
         });
         editItem.addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println("pop up");
+
                 int selected = table.getSelectedRow();
-                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
+                String nic = String.valueOf(((DefaultTableModel) table.getModel()).getValueAt(selected, 0));
                 new ApplicantForm(nic).setVisible(true);
+
             }
         });
-        
-        
+
         add(viewItem);
         add(editItem);
     }

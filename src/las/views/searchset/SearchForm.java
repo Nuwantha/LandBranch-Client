@@ -6,6 +6,7 @@
 package las.views.searchset;
 
 import java.util.ArrayList;
+import javax.swing.JDesktopPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,6 +18,7 @@ public class SearchForm extends javax.swing.JInternalFrame {
     DefaultTableModel model;
     String search;
     String bywhat;
+    JDesktopPane desktopPane;
 
     /**
      * Creates new form SearchClientForm
