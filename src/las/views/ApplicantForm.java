@@ -1561,11 +1561,19 @@ public void EnableAddButton(){
         }
         else {
             Client client = new Client(nic, aplicantName, DOB, telephoneNumber, address, annualincome, 0, 0, isMarried, marriedSons, unmarriedSons);
+            
             try {
-                boolean addNewClient = ClientController.addNewClient(client);
-                if (addNewClient) {
-                    JOptionPane.showMessageDialog(rootPane, "applicant added successfully");
-                    resetFrame();
+                if(ClientController.searchClient(nic)==null){
+            
+                    boolean addNewClient = ClientController.addNewClient(client);
+                    if (addNewClient) {
+                        JOptionPane.showMessageDialog(rootPane, "applicant added successfully");
+                        resetFrame();
+                    }
+                }else{
+                        JOptionPane.showMessageDialog(rootPane, "you have allready added this applicant");
+                        resetFrame();
+                    
                 }
             } catch (ClassNotFoundException | SQLException|RemoteException ex) {
                 Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
