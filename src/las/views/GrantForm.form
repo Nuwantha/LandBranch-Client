@@ -296,6 +296,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="add_grant_permit_no_comboItemStateChanged"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_grant_permit_no_comboActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="addgrant_permit_issueDate">

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.JTextComponent;
@@ -49,16 +50,30 @@ public class GrantForm extends javax.swing.JInternalFrame {
     ClientController ClientController;
     PermitController PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
-            
+    private FrontPage frontpage;
+    private boolean isReminderPermit = false;
     
+    
+  
+    
+      
+            
+    public GrantForm(FrontPage frontpage,Permit permitTobeGrant){
+        this(frontpage);
+        this.choosenPermit=permitTobeGrant;
+        this.isReminderPermit=true;
+        this.UpdateOwner();
+        
+    }
     
     
     /**
      * Creates new form GrantForm
+     * @param frontpage
      */
-    public GrantForm() {
+    public GrantForm(FrontPage frontpage) {
         initComponents();
-        
+        this.frontpage=frontpage;
         
         try {
             Connector sConnector = Connector.getSConnector();
@@ -357,6 +372,11 @@ public class GrantForm extends javax.swing.JInternalFrame {
         add_grant_permit_no_combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 add_grant_permit_no_comboItemStateChanged(evt);
+            }
+        });
+        add_grant_permit_no_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_grant_permit_no_comboActionPerformed(evt);
             }
         });
 
@@ -1279,7 +1299,12 @@ public void EnableAdd(){
 }
     public void UpdateOwner(){
         try {
-            this.choosenPermit = PermitController.searchPermit(String.valueOf(add_grant_permit_no_combo.getSelectedItem()));
+            if (!this.isReminderPermit){
+                this.choosenPermit = PermitController.searchPermit(String.valueOf(add_grant_permit_no_combo.getSelectedItem()));
+            }
+            else {
+                this.add_grant_permit_no_combo.setSelectedItem(this.choosenPermit.getPermitNumber());
+            }
             if (choosenPermit != null) {
                 Client client = choosenPermit.getClient();
                 NominatedSuccessor nominatedSuccessor = choosenPermit.getNominatedSuccessor();
@@ -1417,6 +1442,7 @@ public void EnableAdd(){
                 Grant grant = new Grant(this.Add_Grant_Grant_No.getText(), issueDate,choosenPermit, searchLot, searchClient, nominatedSuccessor);
                 boolean addNewGrant = GrantController.addNewGrant(grant);
                 if (addNewGrant) {
+                    this.frontpage.setRemainders();
                     JOptionPane.showMessageDialog(this, "Grant Added successfully");
                     add_grant_ownernameText.setText(null);
                     add_grant_owner_nic_text.setText(null);
@@ -1576,6 +1602,10 @@ public void EnableAdd(){
         // TODO add your handling code here:
          EnableAdd();
     }//GEN-LAST:event_add_grant_owner_singleStatusRButtonStateChanged
+
+    private void add_grant_permit_no_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_grant_permit_no_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_grant_permit_no_comboActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
