@@ -338,6 +338,74 @@ public class PermitForm extends javax.swing.JInternalFrame {
         addressinvalidlabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addpermit_add_permit_button = new javax.swing.JButton();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        AddGND3 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        AddGNDNo3 = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        AddNotSurveyedNorth3 = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        AddNotSurveyedEast3 = new javax.swing.JTextField();
+        AddNotSurveyedSouth3 = new javax.swing.JTextField();
+        AddNotSurveyedWest3 = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        view_view = new javax.swing.JComboBox();
+        viewPermit_issueDate1 = new javax.swing.JTextField();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        viewpermit_NOS_name_test1 = new javax.swing.JTextField();
+        viewpermit_NOS_nic_test1 = new javax.swing.JTextField();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        viewpermit_NOS_address_test1 = new javax.swing.JTextArea();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        viewpermit_nameText1 = new javax.swing.JTextField();
+        viewpermit_telephoneText1 = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        viewpermit_addressText1 = new javax.swing.JTextArea();
+        viewpermit_no_of_children_test1 = new javax.swing.JTextField();
+        viewpermit_marriedStatusRButton1 = new javax.swing.JRadioButton();
+        viewpermit_singleStatusRButton1 = new javax.swing.JRadioButton();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        viewpermit_annualIncome1 = new javax.swing.JTextField();
+        viewpermit_DOB_test1 = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
+        viewPermit_clientNic1 = new javax.swing.JTextField();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        viewpermit_landName_test1 = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        viewpermit_division_name_test1 = new javax.swing.JTextField();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        viewpermit_acres_test1 = new javax.swing.JTextField();
+        viewpermit_perches_test1 = new javax.swing.JTextField();
+        viewpermit_roods_test1 = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        viewPermit_DivisionumberTest1 = new javax.swing.JTextField();
+        viewPermitPlanNumberTest1 = new javax.swing.JTextField();
+        viewPermitLotNumberTest1 = new javax.swing.JTextField();
+        jLabel106 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setTitle("Permit");
         setPreferredSize(new java.awt.Dimension(960, 600));
@@ -783,47 +851,50 @@ public class PermitForm extends javax.swing.JInternalFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel64)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(cancelPermitPlanNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
-                            .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(28, 28, 28)
-                            .addComponent(cancelPermit_DivisionumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel60))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelpermit_landName_test, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelpermit_division_name_test, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cancelpermit_roods_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel20Layout.createSequentialGroup()
-                            .addComponent(jLabel113)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cancelPermitLotNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel20Layout.createSequentialGroup()
-                            .addComponent(jLabel109)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cancelpermit_acres_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel112)
-                    .addComponent(jLabel110)))
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(cancelpermit_perches_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel111))
+                    .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel64)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cancelPermitPlanNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel20Layout.createSequentialGroup()
+                                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(cancelPermit_DivisionumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel60))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancelpermit_landName_test, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelpermit_division_name_test, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cancelpermit_roods_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel20Layout.createSequentialGroup()
+                                    .addComponent(jLabel113)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cancelPermitLotNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel20Layout.createSequentialGroup()
+                                    .addComponent(jLabel109)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(cancelpermit_acres_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel112)
+                            .addComponent(jLabel110)))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(cancelpermit_perches_test, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel111)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -871,11 +942,11 @@ public class PermitForm extends javax.swing.JInternalFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
@@ -1382,7 +1453,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
                         .addComponent(jLabel12)
                         .addGap(37, 37, 37)
                         .addComponent(addpermit_address, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                         .addComponent(addressinvalidlabel)))
                 .addContainerGap())
         );
@@ -1557,6 +1628,553 @@ public class PermitForm extends javax.swing.JInternalFrame {
 
         jTabbedPane4.addTab("Add Permit", jPanel2);
 
+        jPanel24.setPreferredSize(new java.awt.Dimension(950, 600));
+
+        jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Permit Information"));
+        jPanel25.setPreferredSize(new java.awt.Dimension(581, 581));
+
+        jLabel19.setText("Grama Niladari Division:");
+
+        AddGND3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddGND3ActionPerformed(evt);
+            }
+        });
+
+        jLabel45.setText("Permit No:");
+
+        jLabel78.setText("Grama Niladari Division No:");
+
+        AddGNDNo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddGNDNo3ActionPerformed(evt);
+            }
+        });
+
+        jLabel79.setText("On The North By:");
+
+        AddNotSurveyedNorth3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNotSurveyedNorth3ActionPerformed(evt);
+            }
+        });
+
+        jLabel80.setText("On The East  By:");
+
+        jLabel81.setText("On The South By:");
+
+        jLabel82.setText("On The West By:");
+
+        AddNotSurveyedEast3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNotSurveyedEast3ActionPerformed(evt);
+            }
+        });
+
+        AddNotSurveyedSouth3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNotSurveyedSouth3ActionPerformed(evt);
+            }
+        });
+
+        AddNotSurveyedWest3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNotSurveyedWest3ActionPerformed(evt);
+            }
+        });
+
+        jLabel83.setText("Issue Date:");
+
+        view_view.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                view_viewItemStateChanged(evt);
+            }
+        });
+        view_view.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_viewActionPerformed(evt);
+            }
+        });
+
+        viewPermit_issueDate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewPermit_issueDate1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addComponent(jLabel82)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(AddNotSurveyedWest3))
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel81)
+                                    .addComponent(jLabel80)
+                                    .addComponent(jLabel79))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AddNotSurveyedEast3)
+                                    .addComponent(AddNotSurveyedSouth3)
+                                    .addComponent(AddNotSurveyedNorth3)))))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AddGNDNo3, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                    .addComponent(AddGND3)))
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(view_view, 0, 121, Short.MAX_VALUE)
+                                    .addComponent(viewPermit_issueDate1))))
+                        .addGap(2, 2, 2)))
+                .addGap(18, 18, 18))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(view_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewPermit_issueDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(488, 488, 488)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddNotSurveyedNorth3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddNotSurveyedEast3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddNotSurveyedSouth3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddNotSurveyedWest3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddGND3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddGNDNo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel78))
+                .addGap(13, 13, 13))
+        );
+
+        jPanel26.setBorder(javax.swing.BorderFactory.createTitledBorder("New successor details"));
+
+        jLabel84.setText("Name:");
+
+        jLabel85.setText("NIC:");
+
+        jLabel86.setText("Address:");
+
+        viewpermit_NOS_name_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_NOS_name_test1ActionPerformed(evt);
+            }
+        });
+
+        viewpermit_NOS_nic_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_NOS_nic_test1ActionPerformed(evt);
+            }
+        });
+
+        viewpermit_NOS_address_test1.setColumns(20);
+        viewpermit_NOS_address_test1.setRows(5);
+        jScrollPane8.setViewportView(viewpermit_NOS_address_test1);
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel84)
+                    .addComponent(jLabel85)
+                    .addComponent(jLabel86))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewpermit_NOS_name_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewpermit_NOS_nic_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel84)
+                    .addComponent(viewpermit_NOS_name_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel85)
+                    .addComponent(viewpermit_NOS_nic_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addComponent(jLabel86)
+                        .addGap(0, 15, Short.MAX_VALUE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 306, Short.MAX_VALUE)
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 34, Short.MAX_VALUE)
+        );
+
+        jPanel28.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "owner Detail", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
+
+        viewpermit_nameText1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                viewpermit_nameText1KeyReleased(evt);
+            }
+        });
+
+        viewpermit_addressText1.setColumns(20);
+        viewpermit_addressText1.setRows(5);
+        jScrollPane9.setViewportView(viewpermit_addressText1);
+
+        viewpermit_no_of_children_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_no_of_children_test1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(viewpermit_marriedStatusRButton1);
+        viewpermit_marriedStatusRButton1.setText("Married");
+        viewpermit_marriedStatusRButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                viewpermit_marriedStatusRButton1StateChanged(evt);
+            }
+        });
+
+        buttonGroup1.add(viewpermit_singleStatusRButton1);
+        viewpermit_singleStatusRButton1.setText("Single");
+        viewpermit_singleStatusRButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                viewpermit_singleStatusRButton1StateChanged(evt);
+            }
+        });
+
+        jLabel87.setText("NIC :");
+
+        jLabel88.setText("Name:");
+
+        jLabel89.setText("Phone Number:");
+
+        jLabel90.setText("Address:");
+
+        jLabel91.setText("Birthday:");
+
+        jLabel92.setText("Status:");
+
+        jLabel93.setText("Annual Income:");
+
+        jLabel94.setText("No. of children:");
+
+        viewPermit_clientNic1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                viewPermit_clientNic1KeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane9))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(viewpermit_DOB_test1))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel28Layout.createSequentialGroup()
+                                    .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(32, 32, 32)
+                                    .addComponent(viewpermit_telephoneText1))
+                                .addGroup(jPanel28Layout.createSequentialGroup()
+                                    .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel93)
+                                        .addComponent(jLabel94))
+                                    .addGap(48, 48, 48)
+                                    .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(viewpermit_annualIncome1)
+                                        .addComponent(viewpermit_no_of_children_test1)))
+                                .addGroup(jPanel28Layout.createSequentialGroup()
+                                    .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel28Layout.createSequentialGroup()
+                                            .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(76, 76, 76))
+                                        .addGroup(jPanel28Layout.createSequentialGroup()
+                                            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(31, 31, 31)))
+                                    .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(viewPermit_clientNic1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(viewpermit_nameText1))))
+                            .addComponent(jLabel92)
+                            .addGroup(jPanel28Layout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(viewpermit_marriedStatusRButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(viewpermit_singleStatusRButton1)))
+                        .addGap(0, 25, Short.MAX_VALUE)))
+                .addGap(8, 8, 8))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewPermit_clientNic1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel88)
+                    .addComponent(viewpermit_nameText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewpermit_telephoneText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel89))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel90)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel91)
+                    .addComponent(viewpermit_DOB_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewpermit_marriedStatusRButton1)
+                    .addComponent(viewpermit_singleStatusRButton1)
+                    .addComponent(jLabel92))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel93)
+                    .addComponent(viewpermit_annualIncome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel94)
+                    .addComponent(viewpermit_no_of_children_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Lot Details"));
+
+        jLabel95.setText("Plan Number");
+
+        jLabel96.setText("Land Name");
+
+        viewpermit_landName_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_landName_test1ActionPerformed(evt);
+            }
+        });
+
+        jLabel97.setText("Division Number:");
+
+        jLabel98.setText("Name:");
+
+        viewpermit_division_name_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_division_name_test1ActionPerformed(evt);
+            }
+        });
+
+        jLabel104.setText("Included Land");
+
+        jLabel105.setText("Included Division");
+
+        jLabel114.setText("Expected Extent");
+
+        viewpermit_perches_test1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewpermit_perches_test1ActionPerformed(evt);
+            }
+        });
+
+        jLabel115.setText("Roods");
+
+        jLabel116.setText("Perches");
+
+        jLabel117.setText("Acre / Hectare");
+
+        jLabel118.setText("Lot No");
+
+        viewPermitLotNumberTest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewPermitLotNumberTest1ActionPerformed(evt);
+            }
+        });
+
+        jLabel106.setText("Lot Detail");
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel106, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel105)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(viewPermitPlanNumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel29Layout.createSequentialGroup()
+                            .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(28, 28, 28)
+                            .addComponent(viewPermit_DivisionumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel96))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewpermit_landName_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewpermit_division_name_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(viewpermit_roods_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel29Layout.createSequentialGroup()
+                        .addComponent(jLabel114)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewpermit_acres_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel117)
+                    .addComponent(jLabel115)))
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(viewpermit_perches_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel116))
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addComponent(jLabel118)
+                .addGap(59, 59, 59)
+                .addComponent(viewPermitLotNumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel105)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewpermit_division_name_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewPermit_DivisionumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel104)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewpermit_landName_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewPermitPlanNumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel106)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel118)
+                    .addComponent(viewPermitLotNumberTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel114)
+                    .addComponent(viewpermit_acres_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel117))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewpermit_perches_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel116))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewpermit_roods_test1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel115))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(69, Short.MAX_VALUE))))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("View Permit", jPanel24);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1564,12 +2182,22 @@ public class PermitForm extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 850, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane4.getAccessibleContext().setAccessibleName("Add Permit");
@@ -1577,46 +2205,99 @@ public class PermitForm extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addpermit_permit_issue_dateChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_permit_issue_dateChooserActionPerformed
+    private void viewPermitLotNumberTest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPermitLotNumberTest1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addpermit_permit_issue_dateChooserActionPerformed
+    }//GEN-LAST:event_viewPermitLotNumberTest1ActionPerformed
 
-    private void add_permit_no_of_children_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_permit_no_of_children_testActionPerformed
+    private void viewpermit_perches_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_perches_test1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_permit_no_of_children_testActionPerformed
+    }//GEN-LAST:event_viewpermit_perches_test1ActionPerformed
 
-    private void add_permit_nameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_nameTextKeyReleased
+    private void viewpermit_division_name_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_division_name_test1ActionPerformed
         // TODO add your handling code here:
-        EnableGererateButton();
-    }//GEN-LAST:event_add_permit_nameTextKeyReleased
+    }//GEN-LAST:event_viewpermit_division_name_test1ActionPerformed
 
-    private void add_permit_nic_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_add_permit_nic_comboItemStateChanged
-        try {
-            Client searchClient = ClientController.searchClient((String) add_permit_nic_combo.getSelectedItem());
-            if (searchClient != null) {
-                add_permit_nameText.setText(searchClient.getClientName());
-                add_permit_DOB_test.setText(searchClient.getBirthday());
-                add_permit_no_of_children_test.setText(String.valueOf(searchClient.getNumberOfMarriedSons() + searchClient.getNumberOfUnmarriedSons()));
-                add_permit_telephoneText.setText(searchClient.getTelephone());
-                if (searchClient.isMarried() == 0) {
-                    add_permit_singleStatusRButton.setSelected(true);
-                } else {
-                    add_permit_marriedStatusRButton.setSelected(true);
-                }
-                add_permit_annualIncome.setText(String.valueOf(searchClient.getAnnualIncome()));
-                add_permit_addressText.setText(searchClient.getAddress());
-            }
-        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
-            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
+    private void viewpermit_landName_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_landName_test1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_landName_test1ActionPerformed
+
+    private void viewPermit_clientNic1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_viewPermit_clientNic1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewPermit_clientNic1KeyReleased
+
+    private void viewpermit_singleStatusRButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_viewpermit_singleStatusRButton1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_singleStatusRButton1StateChanged
+
+    private void viewpermit_marriedStatusRButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_viewpermit_marriedStatusRButton1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_marriedStatusRButton1StateChanged
+
+    private void viewpermit_no_of_children_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_no_of_children_test1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_no_of_children_test1ActionPerformed
+
+    private void viewpermit_nameText1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_viewpermit_nameText1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_nameText1KeyReleased
+
+    private void viewpermit_NOS_nic_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_NOS_nic_test1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_NOS_nic_test1ActionPerformed
+
+    private void viewpermit_NOS_name_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewpermit_NOS_name_test1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewpermit_NOS_name_test1ActionPerformed
+
+    private void viewPermit_issueDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPermit_issueDate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewPermit_issueDate1ActionPerformed
+
+    private void view_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_viewActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_view_viewActionPerformed
+
+    private void view_viewItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_view_viewItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_view_viewItemStateChanged
+
+    private void AddNotSurveyedWest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedWest3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddNotSurveyedWest3ActionPerformed
+
+    private void AddNotSurveyedSouth3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedSouth3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddNotSurveyedSouth3ActionPerformed
+
+    private void AddNotSurveyedEast3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedEast3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddNotSurveyedEast3ActionPerformed
+
+    private void AddNotSurveyedNorth3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedNorth3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddNotSurveyedNorth3ActionPerformed
+
+    private void AddGNDNo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGNDNo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddGNDNo3ActionPerformed
+
+    private void AddGND3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGND3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddGND3ActionPerformed
+
+    private void addpermit_add_permit_buttonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_add_permit_buttonKeyReleased
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            addpermit_NOS_address_test.requestFocus();
         }
-    }//GEN-LAST:event_add_permit_nic_comboItemStateChanged
+    }//GEN-LAST:event_addpermit_add_permit_buttonKeyReleased
 
     private void addpermit_add_permit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_add_permit_buttonActionPerformed
         if (!PatternChecker.checkStringdirect(addpermit_NOS_name_test.getText())) {
             nameinvalidlabel.setVisible(true);
         } else if (!PatternChecker.checkNICdirect(addpermit_NOS_nic_test.getText())) {
             nicInvalidLabel.setVisible(true);
-        } 
+        }
         else if(addpermit_NOS_address_test.getText().trim().length()==0){
             addressinvalidlabel.setVisible(true);
         }
@@ -1662,6 +2343,92 @@ public class PermitForm extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_addpermit_add_permit_buttonActionPerformed
 
+    private void addpermit_addressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_addressKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+    }//GEN-LAST:event_addpermit_addressKeyReleased
+
+    private void addpermit_NOS_address_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_address_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+        addressinvalidlabel.setVisible(false);
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            addpermit_add_permit_button.requestFocus();
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            addpermit_NOS_nic_test.requestFocus();
+        }
+    }//GEN-LAST:event_addpermit_NOS_address_testKeyReleased
+
+    private void addpermit_NOS_nic_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_nic_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+        nicInvalidLabel.setVisible(false);
+        String newtext = PatternChecker.checkNIC(addpermit_NOS_nic_test.getText());
+        addpermit_NOS_nic_test.setText(newtext);
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkNICdirect(newtext)) {
+                addpermit_NOS_address_test.requestFocus();
+            } else {
+                nicInvalidLabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            addpermit_NOS_address_test.requestFocus();
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            addpermit_NOS_name_test.requestFocus();
+        }
+    }//GEN-LAST:event_addpermit_NOS_nic_testKeyReleased
+
+    private void addpermit_NOS_nic_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_NOS_nic_testActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addpermit_NOS_nic_testActionPerformed
+
+    private void addpermit_NOS_name_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_name_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+        nameinvalidlabel.setVisible(false);
+        String newtext = PatternChecker.checkstring(addpermit_NOS_name_test.getText());
+        addpermit_NOS_name_test.setText(newtext);
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(newtext)) {
+                addpermit_NOS_nic_test.requestFocus();
+            } else {
+                nameinvalidlabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            addpermit_NOS_nic_test.requestFocus();
+        }
+    }//GEN-LAST:event_addpermit_NOS_name_testKeyReleased
+
+    private void add_permit_no_of_children_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_permit_no_of_children_testActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_permit_no_of_children_testActionPerformed
+
+    private void add_permit_nameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_nameTextKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+    }//GEN-LAST:event_add_permit_nameTextKeyReleased
+
+    private void add_permit_nic_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_add_permit_nic_comboItemStateChanged
+        try {
+            Client searchClient = ClientController.searchClient((String) add_permit_nic_combo.getSelectedItem());
+            if (searchClient != null) {
+                add_permit_nameText.setText(searchClient.getClientName());
+                add_permit_DOB_test.setText(searchClient.getBirthday());
+                add_permit_no_of_children_test.setText(String.valueOf(searchClient.getNumberOfMarriedSons() + searchClient.getNumberOfUnmarriedSons()));
+                add_permit_telephoneText.setText(searchClient.getTelephone());
+                if (searchClient.isMarried() == 0) {
+                    add_permit_singleStatusRButton.setSelected(true);
+                } else {
+                    add_permit_marriedStatusRButton.setSelected(true);
+                }
+                add_permit_annualIncome.setText(String.valueOf(searchClient.getAnnualIncome()));
+                add_permit_addressText.setText(searchClient.getAddress());
+            }
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_add_permit_nic_comboItemStateChanged
+
     private void add_permit_planNumber_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_add_permit_planNumber_comboItemStateChanged
         try {
             Land searchLand = LandController.getAvailableLotOfLand(String.valueOf(add_permit_planNumber_combo.getSelectedItem()));
@@ -1706,6 +2473,11 @@ public class PermitForm extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_add_permit_perches_testActionPerformed
 
+    private void add_permit_acres_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_acres_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+    }//GEN-LAST:event_add_permit_acres_testKeyReleased
+
     private void add_permit_lot_number_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_permit_lot_number_ComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_add_permit_lot_number_ComboActionPerformed
@@ -1724,13 +2496,47 @@ public class PermitForm extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_add_permit_lot_number_ComboItemStateChanged
 
+    private void add_permit_division_name_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_division_name_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+    }//GEN-LAST:event_add_permit_division_name_testKeyReleased
+
     private void add_permit_division_name_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_permit_division_name_testActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_add_permit_division_name_testActionPerformed
 
+    private void add_permit_landName_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_landName_testKeyReleased
+        // TODO add your handling code here:
+        EnableGererateButton();
+    }//GEN-LAST:event_add_permit_landName_testKeyReleased
+
     private void add_permit_landName_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_permit_landName_testActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_add_permit_landName_testActionPerformed
+
+    private void generatePemitNumberButtunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePemitNumberButtunActionPerformed
+        try {
+            String permitNumber = String.valueOf(add_permit_division_number_combo.getSelectedItem()) + "/ENC/";
+            int permitCountOfDivision = PermitController.getPermitCountOfDivision(String.valueOf(add_permit_division_number_combo.getSelectedItem()));
+            if (permitCountOfDivision < 10) {
+                permitNumber += "0" + String.valueOf(permitCountOfDivision + 1);
+            } else {
+                permitNumber += String.valueOf(permitCountOfDivision + 1);
+            }
+            addpermit_permit_numberTest.setText(permitNumber);
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+            Logger.getLogger(PermitForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_generatePemitNumberButtunActionPerformed
+
+    private void generatePemitNumberButtunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatePemitNumberButtunMouseClicked
+        // TODO add your handling code here:
+        addpermit_add_permit_button.setEnabled(true);
+    }//GEN-LAST:event_generatePemitNumberButtunMouseClicked
+
+    private void addpermit_permit_issue_dateChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_permit_issue_dateChooserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addpermit_permit_issue_dateChooserActionPerformed
 
     private void addpermit_permit_numberTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_permit_numberTestActionPerformed
         // TODO add your handling code here:
@@ -1775,6 +2581,20 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private void cancelpermit_landName_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelpermit_landName_testActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelpermit_landName_testActionPerformed
+
+    private void cancelPermit_clientNicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancelPermit_clientNicKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelPermit_clientNicKeyReleased
+
+    private void cancelpermit_singleStatusRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cancelpermit_singleStatusRButtonStateChanged
+        // TODO add your handling code here:
+        cancelpermit_cancel_permit_button.setEnabled(true);
+    }//GEN-LAST:event_cancelpermit_singleStatusRButtonStateChanged
+
+    private void cancelpermit_marriedStatusRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cancelpermit_marriedStatusRButtonStateChanged
+        // TODO add your handling code here:
+        cancelpermit_cancel_permit_button.setEnabled(true);
+    }//GEN-LAST:event_cancelpermit_marriedStatusRButtonStateChanged
 
     private void cancelpermit_no_of_children_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelpermit_no_of_children_testActionPerformed
         // TODO add your handling code here:
@@ -1890,6 +2710,54 @@ public class PermitForm extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_cancelpermit_permit_number_comboItemStateChanged
 
+    public void SetViewPermit(String permitno){
+        try {
+            Permit searchPermit = PermitController.searchPermit(permitno);
+            if (searchPermit != null) {
+                view_view.setSelectedItem(permitno);
+                Client client = searchPermit.getClient();
+                NominatedSuccessor nominatedSuccessor = searchPermit.getNominatedSuccessor();
+                Lot lot = searchPermit.getLot();
+                String permitIssueDate = searchPermit.getPermitIssueDate();
+                viewpermit_nameText1.setText(client.getClientName());
+                viewpermit_telephoneText1.setText(client.getTelephone());
+                viewPermit_clientNic1.setText(client.getNIC());
+                viewpermit_DOB_test1.setText(client.getBirthday());
+                viewpermit_addressText1.setText(client.getAddress());
+                viewpermit_annualIncome1.setText(String.valueOf(client.getAnnualIncome()));
+                viewpermit_no_of_children_test1.setText(String.valueOf(client.getNumberOfMarriedSons() + client.getNumberOfUnmarriedSons()));
+                if (client.isMarried() == 1) {
+                    viewpermit_marriedStatusRButton1.setSelected(true);
+                } else {
+                    viewpermit_singleStatusRButton1.setSelected(true);
+                }
+                int year = Integer.parseInt(permitIssueDate.substring(0, 3));
+                int month = Integer.parseInt(permitIssueDate.substring(5, 6));
+                int date = Integer.parseInt(permitIssueDate.substring(8, 9));
+                Date issueDate = new Date(year, month, date);
+
+                viewPermit_issueDate1.setText(permitIssueDate);
+                viewpermit_NOS_address_test1.setText(nominatedSuccessor.getAddress());
+                viewpermit_NOS_name_test1.setText(nominatedSuccessor.getAddress());
+                viewpermit_NOS_nic_test1.setText(nominatedSuccessor.getNIC_S());
+
+                viewPermitLotNumberTest1.setText(lot.getLotNumber());
+                viewpermit_acres_test1.setText(String.valueOf(lot.getNumberOfAcres()));
+                viewpermit_perches_test1.setText(String.valueOf(lot.getNumberOfPerches()));
+                viewpermit_roods_test1.setText(String.valueOf(lot.getNumberofRoods()));
+
+                Land land = lot.getLand();
+                viewPermitPlanNumberTest1.setText(land.getPlanNumber());
+                viewpermit_landName_test1.setText(land.getLandName());
+                viewPermit_DivisionumberTest1.setText(land.getDivisionNumber());
+                GramaNiladariDivision searchGND = GramaNiladariDivisionController.searchGND(land.getDivisionNumber());
+                viewpermit_division_name_test1.setText(searchGND.getDivisionName());
+
+            }
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+            Logger.getLogger(PermitForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     private void AddNotSurveyedWest2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedWest2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddNotSurveyedWest2ActionPerformed
@@ -1914,119 +2782,6 @@ public class PermitForm extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AddGND2ActionPerformed
 
-    private void generatePemitNumberButtunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePemitNumberButtunActionPerformed
-        try {
-            String permitNumber = String.valueOf(add_permit_division_number_combo.getSelectedItem()) + "/ENC/";
-            int permitCountOfDivision = PermitController.getPermitCountOfDivision(String.valueOf(add_permit_division_number_combo.getSelectedItem()));
-            if (permitCountOfDivision < 10) {
-                permitNumber += "0" + String.valueOf(permitCountOfDivision + 1);
-            } else {
-                permitNumber += String.valueOf(permitCountOfDivision + 1);
-            }
-            addpermit_permit_numberTest.setText(permitNumber);
-        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
-            Logger.getLogger(PermitForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_generatePemitNumberButtunActionPerformed
-
-    private void addpermit_NOS_name_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_name_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-        nameinvalidlabel.setVisible(false);
-        String newtext = PatternChecker.checkstring(addpermit_NOS_name_test.getText());
-        addpermit_NOS_name_test.setText(newtext);
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.checkStringdirect(newtext)) {
-                addpermit_NOS_nic_test.requestFocus();
-            } else {
-                nameinvalidlabel.setVisible(true);
-            }
-        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            addpermit_NOS_nic_test.requestFocus();
-        }
-    }//GEN-LAST:event_addpermit_NOS_name_testKeyReleased
-
-    private void addpermit_NOS_nic_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_nic_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-        nicInvalidLabel.setVisible(false);
-        String newtext = PatternChecker.checkNIC(addpermit_NOS_nic_test.getText());
-        addpermit_NOS_nic_test.setText(newtext);
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.checkNICdirect(newtext)) {
-                addpermit_NOS_address_test.requestFocus();
-            } else {
-                nicInvalidLabel.setVisible(true);
-            }
-        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            addpermit_NOS_address_test.requestFocus();
-        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            addpermit_NOS_name_test.requestFocus();
-        }
-    }//GEN-LAST:event_addpermit_NOS_nic_testKeyReleased
-
-    private void addpermit_NOS_address_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_NOS_address_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-        addressinvalidlabel.setVisible(false);
-        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            addpermit_add_permit_button.requestFocus();
-        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            addpermit_NOS_nic_test.requestFocus();
-        }
-    }//GEN-LAST:event_addpermit_NOS_address_testKeyReleased
-
-    private void addpermit_add_permit_buttonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_add_permit_buttonKeyReleased
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            addpermit_NOS_address_test.requestFocus();
-        }
-    }//GEN-LAST:event_addpermit_add_permit_buttonKeyReleased
-
-    private void add_permit_division_name_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_division_name_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-    }//GEN-LAST:event_add_permit_division_name_testKeyReleased
-
-    private void add_permit_landName_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_landName_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-    }//GEN-LAST:event_add_permit_landName_testKeyReleased
-
-    private void add_permit_acres_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_permit_acres_testKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-    }//GEN-LAST:event_add_permit_acres_testKeyReleased
-
-    private void addpermit_NOS_nic_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addpermit_NOS_nic_testActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addpermit_NOS_nic_testActionPerformed
-
-    private void addpermit_addressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addpermit_addressKeyReleased
-        // TODO add your handling code here:
-        EnableGererateButton();
-    }//GEN-LAST:event_addpermit_addressKeyReleased
-
-    private void generatePemitNumberButtunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatePemitNumberButtunMouseClicked
-        // TODO add your handling code here:
-        addpermit_add_permit_button.setEnabled(true);
-    }//GEN-LAST:event_generatePemitNumberButtunMouseClicked
-
-    private void cancelPermit_clientNicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancelPermit_clientNicKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelPermit_clientNicKeyReleased
-
-    private void cancelpermit_marriedStatusRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cancelpermit_marriedStatusRButtonStateChanged
-        // TODO add your handling code here:
-        cancelpermit_cancel_permit_button.setEnabled(true);
-    }//GEN-LAST:event_cancelpermit_marriedStatusRButtonStateChanged
-
-    private void cancelpermit_singleStatusRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cancelpermit_singleStatusRButtonStateChanged
-        // TODO add your handling code here:
-        cancelpermit_cancel_permit_button.setEnabled(true);
-    }//GEN-LAST:event_cancelpermit_singleStatusRButtonStateChanged
-
     public void EnableGererateButton() {
         if (add_permit_division_name_test.getText().trim().length() != 0 && add_permit_nameText.getText().trim().length() != 0 && add_permit_landName_test.getText().trim().length() != 0 && add_permit_nameText.getText().trim().length() != 0
                 && add_permit_acres_test.getText().trim().length() != 0 && addpermit_NOS_name_test.getText().trim().length() != 0 && addpermit_NOS_nic_test.getText().trim().length() != 0 && addpermit_NOS_address_test.getText().trim().length() != 0) {
@@ -2037,16 +2792,22 @@ public class PermitForm extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AddGND;
     private javax.swing.JTextField AddGND2;
+    private javax.swing.JTextField AddGND3;
     private javax.swing.JTextField AddGNDNo;
     private javax.swing.JTextField AddGNDNo2;
+    private javax.swing.JTextField AddGNDNo3;
     private javax.swing.JTextField AddNotSurveyedEast;
     private javax.swing.JTextField AddNotSurveyedEast2;
+    private javax.swing.JTextField AddNotSurveyedEast3;
     private javax.swing.JTextField AddNotSurveyedNorth;
     private javax.swing.JTextField AddNotSurveyedNorth2;
+    private javax.swing.JTextField AddNotSurveyedNorth3;
     private javax.swing.JTextField AddNotSurveyedSouth;
     private javax.swing.JTextField AddNotSurveyedSouth2;
+    private javax.swing.JTextField AddNotSurveyedSouth3;
     private javax.swing.JTextField AddNotSurveyedWest;
     private javax.swing.JTextField AddNotSurveyedWest2;
+    private javax.swing.JTextField AddNotSurveyedWest3;
     private javax.swing.JTextField add_permit_DOB_test;
     private javax.swing.JTextField add_permit_acres_test;
     private javax.swing.JTextArea add_permit_addressText;
@@ -2103,12 +2864,20 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2116,6 +2885,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -2131,6 +2901,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -2158,6 +2929,27 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
@@ -2168,6 +2960,12 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2175,8 +2973,33 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JLabel nameinvalidlabel;
     private javax.swing.JLabel nicInvalidLabel;
+    private javax.swing.JTextField viewPermitLotNumberTest1;
+    private javax.swing.JTextField viewPermitPlanNumberTest1;
+    private javax.swing.JTextField viewPermit_DivisionumberTest1;
+    private javax.swing.JTextField viewPermit_clientNic1;
+    private javax.swing.JTextField viewPermit_issueDate1;
+    private javax.swing.JComboBox view_view;
+    private javax.swing.JTextField viewpermit_DOB_test1;
+    private javax.swing.JTextArea viewpermit_NOS_address_test1;
+    private javax.swing.JTextField viewpermit_NOS_name_test1;
+    private javax.swing.JTextField viewpermit_NOS_nic_test1;
+    private javax.swing.JTextField viewpermit_acres_test1;
+    private javax.swing.JTextArea viewpermit_addressText1;
+    private javax.swing.JTextField viewpermit_annualIncome1;
+    private javax.swing.JTextField viewpermit_division_name_test1;
+    private javax.swing.JTextField viewpermit_landName_test1;
+    private javax.swing.JRadioButton viewpermit_marriedStatusRButton1;
+    private javax.swing.JTextField viewpermit_nameText1;
+    private javax.swing.JTextField viewpermit_no_of_children_test1;
+    private javax.swing.JTextField viewpermit_perches_test1;
+    private javax.swing.JTextField viewpermit_roods_test1;
+    private javax.swing.JRadioButton viewpermit_singleStatusRButton1;
+    private javax.swing.JTextField viewpermit_telephoneText1;
     // End of variables declaration//GEN-END:variables
 }

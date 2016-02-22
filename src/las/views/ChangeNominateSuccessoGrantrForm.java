@@ -496,7 +496,7 @@ public class ChangeNominateSuccessoGrantrForm extends javax.swing.JDialog {
                 nicInvalidLabel.setVisible(true);
             }
         }
-        else if (evt.getKeyCode()==KeyEvent.VK_DOWN){
+           else if (evt.getKeyCode()==KeyEvent.VK_DOWN){
              address_text.requestFocus();
         }
         else if (evt.getKeyCode()==KeyEvent.VK_UP){

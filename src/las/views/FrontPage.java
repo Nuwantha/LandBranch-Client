@@ -53,7 +53,7 @@ import las.views.view_utilities.Calender;
  * @author Gimhani
  */
 public class FrontPage extends javax.swing.JFrame {
-    
+
     UserController UserController;
     PermitController  PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
@@ -63,10 +63,13 @@ public class FrontPage extends javax.swing.JFrame {
     private PermitReminder permitReminderPanel;
     private ArrayList<Permit> reminderPermits= new ArrayList<Permit>();
     private JDialog reminderDialog = new JDialog (this,"Reminders",false);
+
+    private static FrontPage frontpage=new FrontPage();
+
     /**
      * Creates new form FrontPage
      */
-    public FrontPage() {
+    private FrontPage() {
         initComponents();
         
         ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
@@ -97,8 +100,8 @@ public class FrontPage extends javax.swing.JFrame {
         setDate();
         setPreferredSize(new Dimension(1366, 768));
     }
-
-    public FrontPage(String user) {
+    
+    private FrontPage(String user) {
         this();
         try {
             this.curruser = user;
@@ -124,7 +127,7 @@ public class FrontPage extends javax.swing.JFrame {
             Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void addGrantForReminder(Permit permit){
         GrantForm grantForm = new GrantForm(this,permit);
         grantForm.setSize(desktopPane.getSize());
@@ -180,7 +183,17 @@ public class FrontPage extends javax.swing.JFrame {
     }
     
     
+  
+
+   public static FrontPage getInstance() {
+        return frontpage;
+    }
     
+    public static FrontPage getInstance(String str) {
+        FrontPage fp=new FrontPage(str);
+        frontpage=fp;
+        return frontpage;
+    }
 
     private void setDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-d");
@@ -1057,7 +1070,25 @@ public class FrontPage extends javax.swing.JFrame {
         applicantForm.setVisible(true);
         applicantForm.requestFoucsForm();
     }//GEN-LAST:event_addNewApplicantButtonActionPerformed
-
+    
+    public void SetDesktopPaneForClient(ApplicantForm form,int num){
+                form.setSize(desktopPane.getSize());
+                desktopPane.removeAll();
+                desktopPane.add(form);
+                form.setVisible(true);
+                form.focustabbedpane(num);
+                form.requestFoucsForm();
+    }
+    
+    public void SetDesktopPaneForGrant(GrantForm form,int num){
+                form.setSize(desktopPane.getSize());
+                desktopPane.removeAll();
+                desktopPane.add(form);
+                form.setVisible(true);
+                form.focustabbedpane(num);
+                //form.requestFoucsForm();
+    }
+    
     public void addApplicantForm(String nic){
         ApplicantForm applicantForm = new ApplicantForm(nic);
         applicantForm.setSize(desktopPane.getSize());
@@ -1106,6 +1137,7 @@ public class FrontPage extends javax.swing.JFrame {
                 switch ((String) searchByWhatCombo.getSelectedItem()) {
                     case "By name":
                         searchForm = new SearchClientForm("Applicant", "By name");
+                        
                         break;
                     case "By NIC":
                         searchForm = new SearchClientForm("Applicant", "By NIC");
@@ -1143,6 +1175,7 @@ public class FrontPage extends javax.swing.JFrame {
                 }
                 break;
         }
+        
         searchForm.setSize(desktopPane.getSize());
         desktopPane.removeAll();
         desktopPane.add(searchForm);

@@ -6,6 +6,8 @@
 package las.views.searchset;
 
 import SeverConnector.Connector;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -13,6 +15,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import las.common_classes.PatternChecker;
 import las.controller.ClientController;
@@ -24,6 +30,7 @@ import las.controller.NominatedSuccessorController;
 import las.controller.PermitController;
 import las.models.Permit;
 import las.views.ApplicantForm;
+import las.views.FrontPage;
 
 /**
  *
@@ -38,7 +45,7 @@ public class SearchPermitForm extends SearchForm {
     PermitController PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
     NominatedSuccessorController NominatedSuccessorController;
-
+    PopUpTable2 popUp;
     /**
      * Creates new form SearchClientForm
      */
@@ -69,6 +76,7 @@ public class SearchPermitForm extends SearchForm {
         model = (DefaultTableModel) jTable1.getModel();
         this.bywhat = bywhat;
         this.search = search;
+        popUp=new PopUpTable2(jTable1);
     }
 
     /**
@@ -116,6 +124,11 @@ public class SearchPermitForm extends SearchForm {
             }
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
@@ -241,6 +254,14 @@ public class SearchPermitForm extends SearchForm {
         // TODO add your handling code here:
     }//GEN-LAST:event_typeTextActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+         if(SwingUtilities.isRightMouseButton(evt)){
+             popUp.show(evt.getComponent(),evt.getX(),evt.getY());
+         }
+    }//GEN-LAST:event_jTable1MouseClicked
+
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -249,4 +270,29 @@ public class SearchPermitForm extends SearchForm {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField typeText;
     // End of variables declaration//GEN-END:variables
+}
+
+class PopUpTable2 extends JPopupMenu {
+    
+    public PopUpTable2(final JTable table) {
+        JMenuItem viewItem = new JMenuItem("View Permit");
+        viewItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selected = table.getSelectedRow();
+                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
+                 FrontPage fp=FrontPage.getInstance();
+                ApplicantForm applicantForm = new ApplicantForm();
+                //fp.SetDesktopPane(applicantForm,1);
+                 try {
+                    applicantForm.searchClient(nic);
+                } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+                    Logger.getLogger(PopUpTable.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+      
+        add(viewItem);
+    }
+    
 }

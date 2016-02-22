@@ -258,7 +258,8 @@ public class LoginForm extends javax.swing.JFrame {
             String username = String.valueOf(userCombo.getSelectedItem());
             String password = (passwordField.getText());
             if (UserController.matchPassword(username, password)) {
-                new FrontPage(username).setVisible(true);
+                FrontPage fp=FrontPage.getInstance(username);
+                fp.setVisible(true);
                 this.dispose();
             } else {
                 logInFailedLabel.setVisible(true);

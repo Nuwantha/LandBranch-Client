@@ -6,6 +6,7 @@
 package las.views.searchset;
 
 import SeverConnector.Connector;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
@@ -32,6 +33,7 @@ import las.models.Client;
 import las.models.Grant;
 import las.models.Permit;
 import las.views.ApplicantForm;
+import las.views.FrontPage;
 
 /**
  *
@@ -47,7 +49,6 @@ public class SearchClientForm extends SearchForm {
     PermitController PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
     NominatedSuccessorController NominatedSuccessorController;        
-    
     
     /**
      * Creates new form SearchClientForm
@@ -271,7 +272,6 @@ public class SearchClientForm extends SearchForm {
          }
     }//GEN-LAST:event_jTable1MouseClicked
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -287,12 +287,18 @@ class PopUpTable extends JPopupMenu {
         JMenuItem viewItem = new JMenuItem("View Client");
         JMenuItem editItem = new JMenuItem("Edit Client");
         viewItem.addActionListener(new ActionListener() {
-            
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selected = table.getSelectedRow();
-                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 1));
-                ////
+                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
+                 FrontPage fp=FrontPage.getInstance();
+                ApplicantForm applicantForm = new ApplicantForm();
+                fp.SetDesktopPaneForClient(applicantForm,1);
+                 try {
+                    applicantForm.searchClient(nic);
+                } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+                    Logger.getLogger(PopUpTable.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         editItem.addActionListener(new ActionListener() {
@@ -301,12 +307,19 @@ class PopUpTable extends JPopupMenu {
             public void actionPerformed(ActionEvent e) {
                 int selected = table.getSelectedRow();
                 String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
-                new ApplicantForm(nic).setVisible(true);
-            }
+                FrontPage fp=FrontPage.getInstance();
+                ApplicantForm applicantForm = new ApplicantForm();
+                fp.SetDesktopPaneForClient(applicantForm,2);
+                applicantForm.editClient(nic);
+                
+                            }
         });
+        
+        
         
         
         add(viewItem);
         add(editItem);
     }
+    
 }
