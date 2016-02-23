@@ -1206,6 +1206,9 @@
                   <ComponentRef name="importantButtonSet"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changegrantownershipbuttonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

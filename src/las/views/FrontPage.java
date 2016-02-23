@@ -731,6 +731,8 @@ public class FrontPage extends javax.swing.JFrame {
             .addGap(0, 29, Short.MAX_VALUE)
         );
 
+        desktopPane.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
@@ -747,7 +749,6 @@ public class FrontPage extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(276, Short.MAX_VALUE))
         );
-        desktopPane.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout internalFrameAreaPanelLayout = new javax.swing.GroupLayout(internalFrameAreaPanel);
         internalFrameAreaPanel.setLayout(internalFrameAreaPanelLayout);
@@ -838,6 +839,11 @@ public class FrontPage extends javax.swing.JFrame {
         changegrantownershipbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/change_owner.png"))); // NOI18N
         changegrantownershipbutton.setText("7-Change Ownership");
         importantButtonSet.add(changegrantownershipbutton);
+        changegrantownershipbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changegrantownershipbuttonActionPerformed(evt);
+            }
+        });
         shortcutAccessPanel.add(changegrantownershipbutton);
 
         javax.swing.GroupLayout desktopJPanelLayout = new javax.swing.GroupLayout(desktopJPanel);
@@ -1371,6 +1377,10 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private void CalenderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalenderButtonActionPerformed
         new Calender(this, true).setVisible(true);
     }//GEN-LAST:event_CalenderButtonActionPerformed
+
+    private void changegrantownershipbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changegrantownershipbuttonActionPerformed
+        new ChangeGrantOwnershipForm().setVisible(true);
+    }//GEN-LAST:event_changegrantownershipbuttonActionPerformed
 
     /**
      * @param args the command line arguments

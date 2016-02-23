@@ -72,7 +72,9 @@ public class SearchPermitForm extends SearchForm {
     }
 
     public SearchPermitForm(String search, String bywhat) {
+        this();
         initComponents();
+       
         model = (DefaultTableModel) jTable1.getModel();
         this.bywhat = bywhat;
         this.search = search;
