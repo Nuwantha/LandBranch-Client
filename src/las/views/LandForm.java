@@ -34,22 +34,23 @@ import las.models.Lot;
  * @author Uer
  */
 public class LandForm extends javax.swing.JInternalFrame {
+
     LotController LotController;
     LandController LandController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
+
     /**
      * Creates new form Land
      */
     public LandForm() {
         initComponents();
-        
-        
-          try {
+
+        try {
             Connector sConnector = Connector.getSConnector();
-            LotController=sConnector.getlotController();
-            LandController=sConnector.getLandController();
-            GramaNiladariDivisionController=sConnector.getGramaNiladariDivisionController();
-        } catch (RemoteException | SQLException | NotBoundException | MalformedURLException|ClassNotFoundException ex) {
+            LotController = sConnector.getlotController();
+            LandController = sConnector.getLandController();
+            GramaNiladariDivisionController = sConnector.getGramaNiladariDivisionController();
+        } catch (RemoteException | SQLException | NotBoundException | MalformedURLException | ClassNotFoundException ex) {
             Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         landnotvalidlabel.setVisible(false);
@@ -70,17 +71,16 @@ public class LandForm extends javax.swing.JInternalFrame {
         editlandnamenotvalidlabel.setVisible(false);
         add_lot_buttun.setEnabled(false);
         updateButton.setEnabled(false);
-        
-        
+
         try {
             Lot lastAddedLot = LotController.getLastAddedLot();
             lot_number_test.setText(IdGenerator.generateNextLotNumber(lastAddedLot.getLotNumber()));
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             //search combo
-            
+
             //update cobo ekata
             search_planNumber_combo.setEditable(true);
             JTextComponent editorSearchPlanNumberCombo = (JTextComponent) search_planNumber_combo.getEditor().getEditorComponent();
@@ -96,18 +96,16 @@ public class LandForm extends javax.swing.JInternalFrame {
                         for (int i = 0; i < simmilarPlanNumbers.size(); i++) {
                             list.add(simmilarPlanNumbers.get(i).getPlanNumber());
                         }
-                        GUIitemsValidator.addItemToCombo(list,search_planNumber_combo);
+                        GUIitemsValidator.addItemToCombo(list, search_planNumber_combo);
 
-                    } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                         Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 }
 
             });
-            
-            
-            
+
             //update cobo ekata
             update_planNumber_combo.setEditable(true);
             JTextComponent editorPlanNumberCombo = (JTextComponent) update_planNumber_combo.getEditor().getEditorComponent();
@@ -125,7 +123,7 @@ public class LandForm extends javax.swing.JInternalFrame {
                         }
                         GUIitemsValidator.addItemToCombo(list, update_planNumber_combo);
 
-                    } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                         Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
@@ -149,7 +147,7 @@ public class LandForm extends javax.swing.JInternalFrame {
                         }
                         GUIitemsValidator.addItemToCombo(list, update_gnd_combo);
 
-                    } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                         Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
@@ -177,7 +175,7 @@ public class LandForm extends javax.swing.JInternalFrame {
                         }
                         GUIitemsValidator.addItemToCombo(list, gnd_number_combo);
 
-                    } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
                         Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
@@ -185,7 +183,7 @@ public class LandForm extends javax.swing.JInternalFrame {
 
             });
 
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -887,7 +885,7 @@ public class LandForm extends javax.swing.JInternalFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 155, Short.MAX_VALUE)
+            .addGap(0, 231, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1064,7 +1062,7 @@ public class LandForm extends javax.swing.JInternalFrame {
             .addGroup(AddNewLand2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AddNewLand2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddNewLand2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4))
@@ -1113,7 +1111,7 @@ public class LandForm extends javax.swing.JInternalFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 837, Short.MAX_VALUE)
+            .addGap(0, 913, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -1148,7 +1146,7 @@ public class LandForm extends javax.swing.JInternalFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1239,7 +1237,7 @@ public class LandForm extends javax.swing.JInternalFrame {
             if (searchGND != null) {
                 gnd_name_test.setText(searchGND.getDivisionName());
             }
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(GramaNiladhariForm.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -1247,7 +1245,7 @@ public class LandForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_gnd_number_comboItemStateChanged
 
     private void add_lot_buttunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_lot_buttunActionPerformed
-        
+
         DefaultTableModel tableModel = (DefaultTableModel) lot_table.getModel();
         Object[] rawdata = {lot_number_test.getText(), acre_test.getText(), perches_test.getText(), rood_test.getText()};
         tableModel.addRow(rawdata);
@@ -1255,7 +1253,7 @@ public class LandForm extends javax.swing.JInternalFrame {
         perches_test.setText("");
         rood_test.setText("");
         lot_number_test.setText(IdGenerator.generateNextLotNumber(lot_number_test.getText()));
-        add_lot_buttun.setEnabled(false); 
+        add_lot_buttun.setEnabled(false);
 
     }//GEN-LAST:event_add_lot_buttunActionPerformed
 
@@ -1284,10 +1282,10 @@ public class LandForm extends javax.swing.JInternalFrame {
                 land_west_test.setText(null);
                 land_south_test.setText(null);
                 gnd_number_combo.setSelectedItem(null);
-               lot_table.setModel(new DefaultTableModel());
-               
+                lot_table.setModel(new DefaultTableModel());
+
             }
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_land_save_buttunActionPerformed
@@ -1312,63 +1310,63 @@ public class LandForm extends javax.swing.JInternalFrame {
                     modelULT.addRow(rowdata);
                 }
             }
-        } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_update_planNumber_comboItemStateChanged
-public void EnableUpdate(){
-    if(update_land_name.getText().trim().length()!=0 && update_planNumber_combo.getSelectedItem()!=null && update_gnd_combo.getSelectedItem()!=null){
-        updateButton.setEnabled(true);
-    }
-}
-    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-       try{
-        if(!PatternChecker.checkStringdirect(update_land_name.getText())){
-           editlandnamenotvalidlabel.setVisible(true);
-       }
-       else if(update_land_name.getText().trim().length()==0  ){
-           editlandnamenotvalidlabel.setVisible(true);
-       }
-       else{
-        int showConfirmDialog = JOptionPane.showConfirmDialog(this, "do you want to update");
-        if (showConfirmDialog == 0) {
-            Land land = new Land(String.valueOf(update_planNumber_combo.getSelectedItem()), update_land_name.getText(), (String) update_gnd_combo.getSelectedItem(), update_west_test.getText(), update_east_test.getText(), update_south_test.getText(), update_north_test.getText());
-            ArrayList<Lot> lotList = new ArrayList();
-            
-            for (int i = 0; i < update_lot_table.getRowCount(); i++) {
-                Lot lot = new Lot((String) update_lot_table.getValueAt(i, 0), Integer.parseInt(String.valueOf(update_lot_table.getValueAt(i, 1))),Integer.parseInt(String.valueOf( update_lot_table.getValueAt(i, 3))), Integer.parseInt(String.valueOf( update_lot_table.getValueAt(i, 2))),  land);
-                lotList.add(lot);
-            }
-               
-            land.setLotList(lotList);
-            try {
-                boolean updateLand = LandController.updateLand(land);
-                if (updateLand) {
-                    JOptionPane.showMessageDialog(this, "land update successsfully");
-                    update_planNumber_combo.setSelectedItem(null);
-                    update_gnd_combo.setSelectedItem(null);
-                    update_land_name.setText(null);
-                    update_north_test.setText(null);
-                    update_west_test.setText(null);
-                    update_south_test.setText(null);
-                    update_east_test.setText(null);
-                    update_lot_table.setModel(new DefaultTableModel());
-                } else {
-                    JOptionPane.showMessageDialog(this, "land doesn't update successsfully");
-                }
-            } catch (ClassNotFoundException | SQLException|RemoteException ex) {
-                Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    public void EnableUpdate() {
+        if (update_land_name.getText().trim().length() != 0 && update_planNumber_combo.getSelectedItem() != null && update_gnd_combo.getSelectedItem() != null) {
+            updateButton.setEnabled(true);
         }
-       }}
-       catch(Exception e){
-                JOptionPane.showMessageDialog(this, "Please Enter Data In Correct Formats.");
+    }
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        try {
+            if (!PatternChecker.checkStringdirect(update_land_name.getText())) {
+                editlandnamenotvalidlabel.setVisible(true);
+            } else if (update_land_name.getText().trim().length() == 0) {
+                editlandnamenotvalidlabel.setVisible(true);
+            } else {
+                int showConfirmDialog = JOptionPane.showConfirmDialog(this, "do you want to update");
+                if (showConfirmDialog == 0) {
+                    Land land = new Land(String.valueOf(update_planNumber_combo.getSelectedItem()), update_land_name.getText(), (String) update_gnd_combo.getSelectedItem(), update_west_test.getText(), update_east_test.getText(), update_south_test.getText(), update_north_test.getText());
+                    ArrayList<Lot> lotList = new ArrayList();
+
+                    for (int i = 0; i < update_lot_table.getRowCount(); i++) {
+                        Lot lot = new Lot((String) update_lot_table.getValueAt(i, 0), Integer.parseInt(String.valueOf(update_lot_table.getValueAt(i, 1))), Integer.parseInt(String.valueOf(update_lot_table.getValueAt(i, 3))), Integer.parseInt(String.valueOf(update_lot_table.getValueAt(i, 2))), land);
+                        lotList.add(lot);
+                    }
+                    System.out.println(lotList.size());    
+                    land.setLotList(lotList);
+                    try {
+                        System.out.println("finish");
+                        boolean updateLand = LandController.updateLand(land);
+                        System.out.println(updateLand);
+                        if (updateLand) {
+                            JOptionPane.showMessageDialog(this, "land update successsfully");
+                            update_planNumber_combo.setSelectedItem(null);
+                            update_gnd_combo.setSelectedItem(null);
+                            update_land_name.setText(null);
+                            update_north_test.setText(null);
+                            update_west_test.setText(null);
+                            update_south_test.setText(null);
+                            update_east_test.setText(null);
+                            update_lot_table.setModel(new DefaultTableModel());
+                        } else {
+                            JOptionPane.showMessageDialog(this, "land doesn't update successsfully");
+                        }
+                    } catch (ClassNotFoundException | SQLException | RemoteException ex) {
+                        Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Please Enter Data In Correct Formats.");
+        }
 
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void search_planNumber_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_search_planNumber_comboItemStateChanged
-         String selectedPlanNumber = (String) search_planNumber_combo.getSelectedItem();
+        String selectedPlanNumber = (String) search_planNumber_combo.getSelectedItem();
         try {
             Land searchLand = LandController.searchLand(selectedPlanNumber);
             if (searchLand != null) {
@@ -1387,19 +1385,19 @@ public void EnableUpdate(){
                     modelULT.addRow(rowdata);
                 }
             }
-        } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(LandForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_search_planNumber_comboItemStateChanged
 
     private void view_all_load_buttunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_all_load_buttunActionPerformed
         try {
-            DefaultTableModel viewAllModel=(DefaultTableModel) view_all_table.getModel();
+            DefaultTableModel viewAllModel = (DefaultTableModel) view_all_table.getModel();
             viewAllModel.getDataVector().removeAllElements();
             revalidate();
             ArrayList<Land> allLandDetail = LandController.getAllLandDetail();
             for (Land land : allLandDetail) {
-                Object [] rowdata= {land.getPlanNumber(),land.getDivisionNumber(),land.getLandName(),land.getWestBound(),land.getEastBound(),land.getNorthBound(),land.getSouthBound(),land.getNumberOfLot()};
+                Object[] rowdata = {land.getPlanNumber(), land.getDivisionNumber(), land.getLandName(), land.getWestBound(), land.getEastBound(), land.getNorthBound(), land.getSouthBound(), land.getNumberOfLot()};
                 viewAllModel.addRow(rowdata);
             }
         } catch (ClassNotFoundException | SQLException | RemoteException ex) {
@@ -1410,100 +1408,91 @@ public void EnableUpdate(){
     private void land_name_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_land_name_testKeyReleased
         // TODO add your handling code here:
         landnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(land_name_test.getText());
+        String newtext = PatternChecker.checkstring(land_name_test.getText());
         land_name_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(land_name_test.getText())){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(land_name_test.getText())) {
                 gnd_number_combo.requestFocus();
-            }
-            else{
+            } else {
                 landnotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             gnd_number_combo.requestFocus();
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
+
         }
-       else if(evt.getKeyCode()==KeyEvent.VK_UP){
-            
-        }
-        
+
     }//GEN-LAST:event_land_name_testKeyReleased
 
     private void gnd_number_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gnd_number_comboActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_gnd_number_comboActionPerformed
 
     private void acre_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acre_testActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_acre_testActionPerformed
 
     private void acre_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_acre_testKeyReleased
         // TODO add your handling code here:
-       if(acre_test.getText().trim().length()!=0 && perches_test.getText().trim().length()!=0 && rood_test.getText().trim().length()!=0){
-            add_lot_buttun.setEnabled(true);        
+        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+            add_lot_buttun.setEnabled(true);
         }
-        if(acre_test.getText().trim().length()==0 || perches_test.getText().trim().length()==0 || rood_test.getText().trim().length()==0){
-            add_lot_buttun.setEnabled(false);        
+        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+            add_lot_buttun.setEnabled(false);
         }
         acresnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkDecimal(acre_test.getText());
+        String newtext = PatternChecker.checkDecimal(acre_test.getText());
         acre_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkDecimaldirect(acre_test.getText())){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkDecimaldirect(acre_test.getText())) {
                 perches_test.requestFocus();
+            } else {
+                acresnotvalidlabel.setVisible(true);
             }
-            else{
-               acresnotvalidlabel.setVisible(true);
-            }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             perches_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_south_test.requestFocus();
         }
     }//GEN-LAST:event_acre_testKeyReleased
 
     private void perches_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_perches_testKeyReleased
         // TODO add your handling code here:
-         if(acre_test.getText().trim().length()!=0 && perches_test.getText().trim().length()!=0 && rood_test.getText().trim().length()!=0){
-            add_lot_buttun.setEnabled(true);        
+        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+            add_lot_buttun.setEnabled(true);
         }
-          if(acre_test.getText().trim().length()==0 || perches_test.getText().trim().length()==0 || rood_test.getText().trim().length()==0){
-            add_lot_buttun.setEnabled(false);        
+        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+            add_lot_buttun.setEnabled(false);
         }
         perchesnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkDecimal(perches_test.getText());
+        String newtext = PatternChecker.checkDecimal(perches_test.getText());
         perches_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkDecimaldirect(perches_test.getText())){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkDecimaldirect(perches_test.getText())) {
                 rood_test.requestFocus();
+            } else {
+                perchesnotvalidlabel.setVisible(true);
             }
-            else{
-                 perchesnotvalidlabel.setVisible(true);
-            }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             rood_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             acre_test.requestFocus();
         }
     }//GEN-LAST:event_perches_testKeyReleased
 
     private void rood_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rood_testActionPerformed
         // TODO add your handling code here:
-         
+
     }//GEN-LAST:event_rood_testActionPerformed
 
     private void gnd_number_comboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gnd_number_comboKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             land_north_test.requestFocus();
         }
-        if(evt.getKeyCode()==KeyEvent.VK_UP){
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_name_test.requestFocus();
         }
     }//GEN-LAST:event_gnd_number_comboKeyReleased
@@ -1515,144 +1504,130 @@ public void EnableUpdate(){
     private void land_north_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_land_north_testKeyReleased
         // TODO add your handling code here:
         boundednorthnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(land_north_test.getText());
+        String newtext = PatternChecker.checkstring(land_north_test.getText());
         land_north_test.setText(newtext);
-         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-             if(PatternChecker.checkStringdirect(land_north_test.getText())){
-            land_east_test.requestFocus();}
-             else{
-                 boundednorthnotvalidlabel.setVisible(true);
-             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(land_north_test.getText())) {
+                land_east_test.requestFocus();
+            } else {
+                boundednorthnotvalidlabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             land_east_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             gnd_number_combo.requestFocus();
         }
     }//GEN-LAST:event_land_north_testKeyReleased
 
     private void land_east_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_land_east_testKeyReleased
         // TODO add your handling code here:
-         boundedeastnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(land_east_test.getText());
+        boundedeastnotvalidlabel.setVisible(false);
+        String newtext = PatternChecker.checkstring(land_east_test.getText());
         land_east_test.setText(newtext);
-         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-             if(PatternChecker.checkStringdirect(land_east_test.getText())){
-            land_west_test.requestFocus();}
-             else{
-                 boundedeastnotvalidlabel.setVisible(true);
-             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(land_east_test.getText())) {
+                land_west_test.requestFocus();
+            } else {
+                boundedeastnotvalidlabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             land_west_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_north_test.requestFocus();
         }
-       
+
     }//GEN-LAST:event_land_east_testKeyReleased
 
     private void land_west_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_land_west_testKeyReleased
         // TODO add your handling code here:
         boundedwestnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(land_west_test.getText());
+        String newtext = PatternChecker.checkstring(land_west_test.getText());
         land_west_test.setText(newtext);
-         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-             if(PatternChecker.checkStringdirect(land_west_test.getText())){
-            land_south_test.requestFocus();}
-             else{
-                 boundedwestnotvalidlabel.setVisible(true);
-             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(land_west_test.getText())) {
+                land_south_test.requestFocus();
+            } else {
+                boundedwestnotvalidlabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             land_south_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_east_test.requestFocus();
         }
     }//GEN-LAST:event_land_west_testKeyReleased
 
     private void land_south_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_land_south_testKeyReleased
         // TODO add your handling code here:
-         boundedsouthnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(land_south_test.getText());
+        boundedsouthnotvalidlabel.setVisible(false);
+        String newtext = PatternChecker.checkstring(land_south_test.getText());
         land_south_test.setText(newtext);
-         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-             if(PatternChecker.checkStringdirect(land_south_test.getText())){
-            acre_test.requestFocus();}
-             else{
-                 boundedsouthnotvalidlabel.setVisible(true);
-             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(land_south_test.getText())) {
+                acre_test.requestFocus();
+            } else {
+                boundedsouthnotvalidlabel.setVisible(true);
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             acre_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_west_test.requestFocus();
         }
     }//GEN-LAST:event_land_south_testKeyReleased
 
     private void rood_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rood_testKeyReleased
         // TODO add your handling code here:
-         if(acre_test.getText().trim().length()!=0 && perches_test.getText().trim().length()!=0 && rood_test.getText().trim().length()!=0){
-            add_lot_buttun.setEnabled(true);        
+        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+            add_lot_buttun.setEnabled(true);
         }
-         if(acre_test.getText().trim().length()==0 || perches_test.getText().trim().length()==0 || rood_test.getText().trim().length()==0){
-            add_lot_buttun.setEnabled(false);        
+        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+            add_lot_buttun.setEnabled(false);
         }
         roodsnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkDecimal(rood_test.getText());
+        String newtext = PatternChecker.checkDecimal(rood_test.getText());
         rood_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkDecimaldirect(rood_test.getText())){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkDecimaldirect(rood_test.getText())) {
                 add_lot_buttun.requestFocus();
+            } else {
+                perchesnotvalidlabel.setVisible(true);
             }
-            else{
-                 perchesnotvalidlabel.setVisible(true);
-            }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             add_lot_buttun.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             perches_test.requestFocus();
         }
     }//GEN-LAST:event_rood_testKeyReleased
 
     private void update_planNumber_comboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_planNumber_comboKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_land_name.requestFocus();
         }
     }//GEN-LAST:event_update_planNumber_comboKeyReleased
 
     private void update_land_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_land_nameKeyReleased
-         EnableUpdate();
-        editlandnamenotvalidlabel.setVisible(false);        
-        String newtext=PatternChecker.checkstring(update_land_name.getText());
+        EnableUpdate();
+        editlandnamenotvalidlabel.setVisible(false);
+        String newtext = PatternChecker.checkstring(update_land_name.getText());
         update_land_name.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(update_land_name.getText())){
-            update_gnd_combo.requestFocus();}
-            else{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(update_land_name.getText())) {
+                update_gnd_combo.requestFocus();
+            } else {
                 editlandnamenotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_gnd_combo.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_planNumber_combo.requestFocus();
         }
     }//GEN-LAST:event_update_land_nameKeyReleased
 
     private void update_gnd_comboKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_gnd_comboKeyReleased
-       
-         if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_north_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_land_name.requestFocus();
         }
     }//GEN-LAST:event_update_gnd_comboKeyReleased
@@ -1660,40 +1635,36 @@ public void EnableUpdate(){
     private void update_north_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_north_testKeyReleased
 
         editbounednorthnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(update_north_test.getText());
+        String newtext = PatternChecker.checkstring(update_north_test.getText());
         update_north_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(update_north_test.getText())){
-            update_east_test.requestFocus();}
-            else{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(update_north_test.getText())) {
+                update_east_test.requestFocus();
+            } else {
                 editbounednorthnotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_east_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_gnd_combo.requestFocus();
         }
-        
+
     }//GEN-LAST:event_update_north_testKeyReleased
 
     private void update_east_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_east_testKeyReleased
         // TODO add your handling code here:
         editbounedeastnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(update_east_test.getText());
+        String newtext = PatternChecker.checkstring(update_east_test.getText());
         update_east_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(update_east_test.getText())){
-            update_west_test.requestFocus();}
-            else{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(update_east_test.getText())) {
+                update_west_test.requestFocus();
+            } else {
                 editbounedeastnotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_west_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_north_test.requestFocus();
         }
     }//GEN-LAST:event_update_east_testKeyReleased
@@ -1701,19 +1672,17 @@ public void EnableUpdate(){
     private void update_west_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_west_testKeyReleased
         // TODO add your handling code here:
         editbounedwestnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(update_west_test.getText());
+        String newtext = PatternChecker.checkstring(update_west_test.getText());
         update_west_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(update_west_test.getText())){
-            update_south_test.requestFocus();}
-            else{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(update_west_test.getText())) {
+                update_south_test.requestFocus();
+            } else {
                 editbounedwestnotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             update_south_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_east_test.requestFocus();
         }
     }//GEN-LAST:event_update_west_testKeyReleased
@@ -1721,46 +1690,42 @@ public void EnableUpdate(){
     private void update_south_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_update_south_testKeyReleased
         // TODO add your handling code here:
         editbounedsouthnotvalidlabel.setVisible(false);
-        String newtext=PatternChecker.checkstring(update_south_test.getText());
+        String newtext = PatternChecker.checkstring(update_south_test.getText());
         update_south_test.setText(newtext);
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            if(PatternChecker.checkStringdirect(update_south_test.getText())){
-            updateButton.requestFocus();}
-            else{
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (PatternChecker.checkStringdirect(update_south_test.getText())) {
+                updateButton.requestFocus();
+            } else {
                 editbounedsouthnotvalidlabel.setVisible(true);
             }
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_DOWN){
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             updateButton.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_UP){
+        } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_west_test.requestFocus();
         }
     }//GEN-LAST:event_update_south_testKeyReleased
 
     private void updateButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_updateButtonKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_UP){
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_south_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_RIGHT){
+        } else if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
             cancelButton.requestFocus();
         }
     }//GEN-LAST:event_updateButtonKeyReleased
 
     private void cancelButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cancelButtonKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_UP){
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             update_south_test.requestFocus();
-        }
-        else if(evt.getKeyCode()==KeyEvent.VK_LEFT){
+        } else if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             updateButton.requestFocus();
         }
     }//GEN-LAST:event_cancelButtonKeyReleased
 
     private void add_lot_buttunKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_lot_buttunKeyReleased
         // TODO add your handling code here
-         if(evt.getKeyCode()==KeyEvent.VK_UP){
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
             rood_test.requestFocus();
         }
     }//GEN-LAST:event_add_lot_buttunKeyReleased

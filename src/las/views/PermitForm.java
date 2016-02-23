@@ -2247,7 +2247,7 @@ public class PermitForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_view_permit_comboActionPerformed
 
     private void view_permit_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_view_permit_comboItemStateChanged
-        SetViewPermit(String.valueOf(view_permit_combo.getSelectedItem()));
+        //SetViewPermit(String.valueOf(view_permit_combo.getSelectedItem()));
     }//GEN-LAST:event_view_permit_comboItemStateChanged
 
     private void AddNotSurveyedWest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNotSurveyedWest3ActionPerformed
