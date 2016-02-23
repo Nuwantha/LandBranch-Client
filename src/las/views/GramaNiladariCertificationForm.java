@@ -43,7 +43,7 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
         } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
             Logger.getLogger(GramaNiladariCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         no_applicant_label.setVisible(false);
         //setLocationRelativeTo(null);
         setTitle("Certifications to add");
@@ -69,6 +69,7 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
         this();
         try {
             this.gnd = gnd;
+            
             ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getPermitsToCertify(gnd.getDivisionNumber());
             if (permitListToCertify.size() > 10) {
                 ((GridLayout) buttonPanel.getLayout()).setRows(permitListToCertify.size());

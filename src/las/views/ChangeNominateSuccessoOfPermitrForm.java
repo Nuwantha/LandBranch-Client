@@ -149,6 +149,7 @@ public class ChangeNominateSuccessoOfPermitrForm extends javax.swing.JDialog {
 
         currentnominatedsucclabel.setText("Currently nominated successor:");
 
+        permit_number_combo.setEditable(true);
         permit_number_combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 permit_number_comboItemStateChanged(evt);
