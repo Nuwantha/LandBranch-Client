@@ -29,7 +29,7 @@ public class Connector {
     private PermitController permitController;
     private UserController userController;
     public Connector() throws NotBoundException, MalformedURLException, RemoteException {
-        String lookUpString = "rmi://127.0.0.1:344/LandBranchServer";
+        String lookUpString = "rmi://192.168.1.24:1099/LandBranchServer";
         remoteFactory = (RemoteFactory) Naming.lookup(lookUpString);
     }
 
