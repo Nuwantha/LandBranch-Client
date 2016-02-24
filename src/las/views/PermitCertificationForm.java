@@ -11,7 +11,10 @@ import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -25,7 +28,7 @@ import las.models.Permit;
  *
  * @author DinsuG
  */
-public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
+public class PermitCertificationForm extends javax.swing.JInternalFrame {
 
     GramaNiladariDivisionController GramaNiladariDivisionController;
     PermitController PermitController;
@@ -34,67 +37,74 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
-    public GramaNiladariCertificationForm() {
+    public PermitCertificationForm() {
         initComponents();
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-d");
+        Date date = new Date();
+        dateText.setText(dateFormat.format(date));
+       
         try {
             Connector sConnector = Connector.getSConnector();
             GramaNiladariDivisionController = sConnector.getGramaNiladariDivisionController();
             PermitController = sConnector.getPermitController();
         } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(GramaNiladariCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PermitCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         no_applicant_label.setVisible(false);
         //setLocationRelativeTo(null);
         setTitle("Certifications to add");
+        
         //////////////
         try {
-            this.gnd = GramaNiladariDivisionController.searchGND("406");
-            ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getPermitsToCertify(gnd.getDivisionNumber());
+            //this.gnd = GramaNiladariDivisionController.searchGND("406");
+            //ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getPermitsToCertify(gnd.getDivisionNumber());
+             ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getAllPermitsToCertify();
             if (permitListToCertify.size() > 10) {
                 ((GridLayout) buttonPanel.getLayout()).setRows(permitListToCertify.size());
             }
             for (Permit p : permitListToCertify) {
-                buttonPanel.add(new JButton(p.getClient().getClientName()));
+                buttonPanel.add(new JButton(p.getClient().getClientName()+" "+p.getPermitNumber()));
             }
 
             buttonPanel.setVisible(true);
         } catch (SQLException | ClassNotFoundException | RemoteException ex) {
-            Logger.getLogger(GramaNiladariCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PermitCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
-    public GramaNiladariCertificationForm(java.awt.Frame parent, boolean modal, GramaNiladariDivision gnd) {
+    public PermitCertificationForm(java.awt.Frame parent, boolean modal) {
         this();
-        try {
-            /*
-            this.gnd = gnd;
+        /*try {
             
+            
+            this.gnd = gnd;
             ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getPermitsToCertify(gnd.getDivisionNumber());
-            */
+             
             ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getAllPermitsToCertify();
+            
             if (permitListToCertify.size() > 10) {
                 ((GridLayout) buttonPanel.getLayout()).setRows(permitListToCertify.size());
             }
             for (Permit p : permitListToCertify) {
-                buttonPanel.add(new JButton(p.getClient().getClientName()));
+                buttonPanel.add(new JButton(p.getClient().getClientName()+" "+p.getPermitNumber()));
             }
             buttonPanel.setVisible(true);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(GramaNiladariCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PermitCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
         } catch (RemoteException ex) {
-            Logger.getLogger(GramaNiladariCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Logger.getLogger(PermitCertificationForm.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }
 
-
-/**
- * This method is called from within the constructor to initialize the form.
- * WARNING: Do NOT modify this code. The content of this method is always
- * regenerated by the Form Editor.
- */
-@SuppressWarnings("unchecked")
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -106,12 +116,6 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         dateText = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        gramaNiladaryTest = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        gramaNiladaryDivisionTest = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        divisionNumberTest = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         permitNumberTest = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -138,11 +142,7 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Today:");
 
-        jLabel2.setText("Grama Niladari:");
-
-        jLabel3.setText("My Grama Niladari Division:");
-
-        jLabel4.setText("Division Number:");
+        dateText.setEditable(false);
 
         jLabel10.setText("Permit Number");
 
@@ -156,25 +156,12 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gramaNiladaryTest, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(gramaNiladaryDivisionTest, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(permitNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(divisionNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addComponent(permitNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,20 +169,12 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(gramaNiladaryTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(gramaNiladaryDivisionTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(permitNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(divisionNumberTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -413,17 +392,15 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
             }
             boolean addGramaNiladaryCertificateToPermit = PermitController.addGramaNiladaryCertificateToPermit(searchPermit);
             if (addGramaNiladaryCertificateToPermit) {
-                JOptionPane.showMessageDialog(this, "Add Grama Niladary Certification Well");
+                JOptionPane.showMessageDialog(this, "Add Certification done");
             } else {
-                JOptionPane.showMessageDialog(this, "Grama Niladary Certification does not added");
-            
+                JOptionPane.showMessageDialog(this, "Certification does not added");
 
-}
+            }
 
         } catch (RemoteException | SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(GramaNiladariCertificationForm.class  
-
-.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PermitCertificationForm.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_saveButtonActionPerformed
@@ -436,15 +413,9 @@ public class GramaNiladariCertificationForm extends javax.swing.JInternalFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JTextField dateText;
-    private javax.swing.JTextField divisionNumberTest;
-    private javax.swing.JTextField gramaNiladaryDivisionTest;
-    private javax.swing.JTextField gramaNiladaryTest;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

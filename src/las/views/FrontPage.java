@@ -55,40 +55,40 @@ import las.views.view_utilities.Calender;
 public class FrontPage extends javax.swing.JFrame {
 
     UserController UserController;
-    PermitController  PermitController;
+    PermitController PermitController;
     GramaNiladariDivisionController GramaNiladariDivisionController;
     BackUP backUP;
     private String curruser;
     private GramaNiladariDivision gnd;
     private PermitReminder permitReminderPanel;
-    private ArrayList<Permit> reminderPermits= new ArrayList<Permit>();
-    private JDialog reminderDialog = new JDialog (this,"Reminders",false);
+    private ArrayList<Permit> reminderPermits = new ArrayList<Permit>();
+    private JDialog reminderDialog = new JDialog(this, "Reminders", false);
 
-    private static FrontPage frontpage=new FrontPage();
+    private static FrontPage frontpage = new FrontPage();
 
     /**
      * Creates new form FrontPage
      */
     private FrontPage() {
         initComponents();
-        
+
         ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
         setIconImage(icon1.getImage());
         try {
             Connector sConnector = Connector.getSConnector();
-            UserController=sConnector.getUserController();
+            UserController = sConnector.getUserController();
             PermitController = sConnector.getPermitController();
-            backUP=sConnector.getbBackUPController();
-            GramaNiladariDivisionController=sConnector.getGramaNiladariDivisionController();
-            
+            backUP = sConnector.getbBackUPController();
+            GramaNiladariDivisionController = sConnector.getGramaNiladariDivisionController();
+
         } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
             Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InterruptedException ex) {
             Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        
+
         desktopPane.removeAll();
         ApplicantForm applicantForm = new ApplicantForm();
         applicantForm.setSize(desktopPane.getSize());
@@ -100,7 +100,7 @@ public class FrontPage extends javax.swing.JFrame {
         setDate();
         setPreferredSize(new Dimension(1366, 768));
     }
-    
+
     private FrontPage(String user) {
         this();
         try {
@@ -115,83 +115,67 @@ public class FrontPage extends javax.swing.JFrame {
                 addnewlandbutton.setEnabled(false);
                 changegrantownershipbutton.setEnabled(false);
                 GramaNiladariDivisionInfoButton.setEnabled(false);
-                
-                this.gnd=GramaNiladariDivisionController.searchGNDByOfficer(user);
+
+                this.gnd = GramaNiladariDivisionController.searchGNDByOfficer(user);
 
             } //for land branch staff
             else if (currentuser.getPower() == 2) {
-                
+
                 addcertificationbutton.setEnabled(false);
             }
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void addGrantForReminder(Permit permit){
-        GrantForm grantForm = new GrantForm(this,permit);
+    public void addGrantForReminder(Permit permit) {
+        GrantForm grantForm = new GrantForm(this, permit);
         grantForm.setSize(desktopPane.getSize());
         desktopPane.removeAll();
         desktopPane.add(grantForm);
         grantForm.setVisible(true);
 
-    
     }
-    
-    public void setRemainders(){
-            
+
+    public void setRemainders() {
+
         try {
-        
-            ArrayList<Permit> permits =PermitController.getAllPermitsReadytoGrant();
-      
-            for(Permit permit:permits){
-                if (DateChecker.isValid(permit.getPermitIssueDate())){
-                  
+
+            ArrayList<Permit> permits = PermitController.getAllPermitsReadytoGrant();
+
+            for (Permit permit : permits) {
+                if (DateChecker.isValid(permit.getPermitIssueDate())) {
+
                     this.reminderPermits.add(permit);
-                            
-                
+
                 }
-                
+
             }
-            if (reminderPermits.isEmpty()){
-            ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/no_reminders_1.png"));
-            this.REminderButton.setDisabledIcon(icon1);
-            this.REminderButton.setEnabled(false);
-     
-            
-            }
-            else {
+            if (reminderPermits.isEmpty()) {
+                ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/no_reminders_1.png"));
+                this.REminderButton.setDisabledIcon(icon1);
+                this.REminderButton.setEnabled(false);
+
+            } else {
                 ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/reminders_1.png"));
                 this.REminderButton.setIcon(icon1);
                 this.REminderButton.setEnabled(true);
-             
-            
-            
+
             }
-        
-            
-        } catch (ClassNotFoundException | SQLException |RemoteException ex) {
+
+        } catch (ClassNotFoundException | SQLException | RemoteException ex) {
             Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-                  
-                  
 
-   
-        
     }
-    
-    
-  
 
-   public static FrontPage getInstance() {
+    public static FrontPage getInstance() {
         return frontpage;
     }
-    
+
     public static FrontPage getInstance(String str) {
-        FrontPage fp=new FrontPage(str);
-        frontpage=fp;
+        FrontPage fp = new FrontPage(str);
+        frontpage = fp;
         return frontpage;
     }
 
@@ -1059,13 +1043,13 @@ public class FrontPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void REminderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REminderButtonActionPerformed
-        permitReminderPanel = new PermitReminder(this.reminderPermits,this);
+        permitReminderPanel = new PermitReminder(this.reminderPermits, this);
         JDialog.setDefaultLookAndFeelDecorated(true);
         reminderDialog.setContentPane(this.permitReminderPanel);
         reminderDialog.pack();
         reminderDialog.setVisible(true);
-        
-      
+
+
     }//GEN-LAST:event_REminderButtonActionPerformed
 
     private void addNewApplicantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewApplicantButtonActionPerformed
@@ -1076,33 +1060,33 @@ public class FrontPage extends javax.swing.JFrame {
         applicantForm.setVisible(true);
         applicantForm.requestFoucsForm();
     }//GEN-LAST:event_addNewApplicantButtonActionPerformed
-    
-    public void SetDesktopPaneForClient(ApplicantForm form,int num){
-                form.setSize(desktopPane.getSize());
-                desktopPane.removeAll();
-                desktopPane.add(form);
-                form.setVisible(true);
-                form.focustabbedpane(num);
-                form.requestFoucsForm();
+
+    public void SetDesktopPaneForClient(ApplicantForm form, int num) {
+        form.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(form);
+        form.setVisible(true);
+        form.focustabbedpane(num);
+        form.requestFoucsForm();
     }
-    
-    public void SetDesktopPaneForGrant(GrantForm form,int num){
-                form.setSize(desktopPane.getSize());
-                desktopPane.removeAll();
-                desktopPane.add(form);
-                form.setVisible(true);
-                form.focustabbedpane(num);
-                //form.requestFoucsForm();
+
+    public void SetDesktopPaneForGrant(GrantForm form, int num) {
+        form.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(form);
+        form.setVisible(true);
+        form.focustabbedpane(num);
+        //form.requestFoucsForm();
     }
-    
-    public void addApplicantForm(String nic){
+
+    public void addApplicantForm(String nic) {
         ApplicantForm applicantForm = new ApplicantForm(nic);
         applicantForm.setSize(desktopPane.getSize());
         desktopPane.removeAll();
         desktopPane.add(applicantForm);
         applicantForm.setVisible(true);
     }
-    
+
     private void GramaNiladariDivisionInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GramaNiladariDivisionInfoButtonActionPerformed
         GramaNiladhariForm gramaNiladhariForm = new GramaNiladhariForm();
         gramaNiladhariForm.setSize(desktopPane.getSize());
@@ -1143,7 +1127,7 @@ public class FrontPage extends javax.swing.JFrame {
                 switch ((String) searchByWhatCombo.getSelectedItem()) {
                     case "By name":
                         searchForm = new SearchClientForm("Applicant", "By name");
-                        
+
                         break;
                     case "By NIC":
                         searchForm = new SearchClientForm("Applicant", "By NIC");
@@ -1181,7 +1165,7 @@ public class FrontPage extends javax.swing.JFrame {
                 }
                 break;
         }
-        
+
         searchForm.setSize(desktopPane.getSize());
         desktopPane.removeAll();
         desktopPane.add(searchForm);
@@ -1210,7 +1194,13 @@ public class FrontPage extends javax.swing.JFrame {
     }//GEN-LAST:event_searchByWhatComboActionPerformed
 
     private void addcertificationbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcertificationbuttonActionPerformed
-        new GramaNiladariCertificationForm(this, true,gnd).setVisible(true);
+        PermitCertificationForm form = new PermitCertificationForm(this, true);
+        form.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(form);
+        form.setVisible(true);
+        
+        //new PermitCertificationForm(this, true).setVisible(true);
     }//GEN-LAST:event_addcertificationbuttonActionPerformed
 
     private void searchSetComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchSetComboActionPerformed
@@ -1226,7 +1216,7 @@ public class FrontPage extends javax.swing.JFrame {
     }//GEN-LAST:event_changeOwnPerMenuActionPerformed
 
     private void changeOwnGraMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeOwnGraMenuActionPerformed
-new ChangeGrantOwnershipForm().setVisible(true);
+        new ChangeGrantOwnershipForm().setVisible(true);
     }//GEN-LAST:event_changeOwnGraMenuActionPerformed
 
     private void nomGraSuccessorMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomGraSuccessorMenuActionPerformed
@@ -1250,27 +1240,27 @@ new ChangeGrantOwnershipForm().setVisible(true);
     private void restoreMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restoreMenuActionPerformed
         try {
             int restoreBackup = backUP.restoreBackup();
-            if(restoreBackup==0){
-                JOptionPane.showMessageDialog(this,"Backup restored successfully");
-            }else{
-                JOptionPane.showMessageDialog(this,"Backup is not restored successfully");
-            
+            if (restoreBackup == 0) {
+                JOptionPane.showMessageDialog(this, "Backup restored successfully");
+            } else {
+                JOptionPane.showMessageDialog(this, "Backup is not restored successfully");
+
             }
-            
+
         } catch (IOException | InterruptedException ex) {
-           ex.printStackTrace();
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_restoreMenuActionPerformed
 
     private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutButtonActionPerformed
-        
+
         new LoginForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LogOutButtonActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
-        int result=JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?");
-        if(result==JOptionPane.YES_OPTION){
+        int result = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?");
+        if (result == JOptionPane.YES_OPTION) {
             this.dispose();
         }
     }//GEN-LAST:event_ExitButtonActionPerformed
@@ -1296,7 +1286,7 @@ new ChangeGrantOwnershipForm().setVisible(true);
     }//GEN-LAST:event_addGrantMenuActionPerformed
 
     private void statDivisionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statDivisionMenuActionPerformed
-         new ApplicantByDivisionDialog(this,true).setVisible(true);
+        new ApplicantByDivisionDialog(this, true).setVisible(true);
     }//GEN-LAST:event_statDivisionMenuActionPerformed
 
     private void statYearMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statYearMenuActionPerformed
@@ -1344,10 +1334,10 @@ new ChangeGrantOwnershipForm().setVisible(true);
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //as if cancel option clicked before,
-        int result=JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?");
-        if(result==JOptionPane.YES_OPTION){
+        int result = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?");
+        if (result == JOptionPane.YES_OPTION) {
             this.dispose();
-        }else{
+        } else {
             this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         }
     }//GEN-LAST:event_formWindowClosing
