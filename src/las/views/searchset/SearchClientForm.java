@@ -290,7 +290,7 @@ class PopUpTable extends JPopupMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selected = table.getSelectedRow();
-                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
+                    String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
                  FrontPage fp=FrontPage.getInstance();
                 ApplicantForm applicantForm = new ApplicantForm();
                 fp.SetDesktopPaneForClient(applicantForm,1);

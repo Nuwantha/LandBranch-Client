@@ -1194,11 +1194,7 @@ public class FrontPage extends javax.swing.JFrame {
     }//GEN-LAST:event_searchByWhatComboActionPerformed
 
     private void addcertificationbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcertificationbuttonActionPerformed
-        PermitCertificationForm form = new PermitCertificationForm(this, true);
-        form.setSize(desktopPane.getSize());
-        desktopPane.removeAll();
-        desktopPane.add(form);
-        form.setVisible(true);
+        addCertificationForm();
         
         //new PermitCertificationForm(this, true).setVisible(true);
     }//GEN-LAST:event_addcertificationbuttonActionPerformed
@@ -1360,6 +1356,14 @@ public class FrontPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formKeyReleased
 
+    public void addCertificationForm(){
+        PermitCertificationForm form = new PermitCertificationForm(this, true,this);
+        form.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(form);
+        form.setVisible(true);
+    }
+    
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         new Calculator().setVisible(true);
     }//GEN-LAST:event_jButton17ActionPerformed
