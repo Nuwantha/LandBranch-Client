@@ -131,22 +131,22 @@ public class NewUserCreator extends javax.swing.JDialog {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea1.setColumns(20);
         jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("All powers to edit,delete,view\n,payments,registration and attendance\n marking.");
+        jTextArea1.setText("All powers to edit,delete,view\n,all permits , grants and applicants. \ncan certify too.");
         jTextArea1.setAutoscrolls(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setColumns(20);
         jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Powers limited to view ,make payments \nand create new registration ");
+        jTextArea2.setText("Powers limited to edit,delete,view\n,all permits , grants and applicants.  ");
         jTextArea2.setAutoscrolls(false);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -218,9 +218,8 @@ public class NewUserCreator extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userRButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
         );
 
         createButton.setText("Create Account");
@@ -308,6 +307,7 @@ public class NewUserCreator extends javax.swing.JDialog {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
        String name=nameText.getText();
        String password=passwordField.getText();
+        System.out.println(password);
        int ability = 2;
        if(adminRButton.isSelected()){
            ability=1;

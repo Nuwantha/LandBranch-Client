@@ -79,12 +79,12 @@ public class ChangeNominateSuccessoOfPermitrForm extends javax.swing.JDialog {
         nicInvalidLabel.setVisible(false);
     }
 
-    public ChangeNominateSuccessoOfPermitrForm(GrantForm parent, Permit choosenpermit) {
+    public ChangeNominateSuccessoOfPermitrForm(GrantForm2 parent, Permit choosenpermit) {
 
     }
 
     //to view gui for grant successor nomination
-    public ChangeNominateSuccessoOfPermitrForm(GrantForm parent, boolean modal, Grant grant) {
+    public ChangeNominateSuccessoOfPermitrForm(GrantForm2 parent, boolean modal, Grant grant) {
         //this(parent, modal);
 
     }

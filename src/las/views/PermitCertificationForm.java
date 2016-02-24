@@ -6,7 +6,11 @@
 package las.views;
 
 import SeverConnector.Connector;
+import java.awt.Frame;
 import java.awt.GridLayout;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -19,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import las.controller.GramaNiladariDivisionController;
 import las.controller.PermitController;
 import las.models.GramaNiladariDivision;
@@ -33,17 +38,18 @@ public class PermitCertificationForm extends javax.swing.JInternalFrame {
     GramaNiladariDivisionController GramaNiladariDivisionController;
     PermitController PermitController;
     GramaNiladariDivision gnd;
+    FrontPage parent;
 
     /**
      * Creates new form NewJInternalFrame
      */
     public PermitCertificationForm() {
         initComponents();
-        
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-d");
         Date date = new Date();
         dateText.setText(dateFormat.format(date));
-       
+
         try {
             Connector sConnector = Connector.getSConnector();
             GramaNiladariDivisionController = sConnector.getGramaNiladariDivisionController();
@@ -55,17 +61,26 @@ public class PermitCertificationForm extends javax.swing.JInternalFrame {
         no_applicant_label.setVisible(false);
         //setLocationRelativeTo(null);
         setTitle("Certifications to add");
-        
+
         //////////////
         try {
             //this.gnd = GramaNiladariDivisionController.searchGND("406");
             //ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getPermitsToCertify(gnd.getDivisionNumber());
-             ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getAllPermitsToCertify();
+            ArrayList<Permit> permitListToCertify = GramaNiladariDivisionController.getAllPermitsToCertify();
             if (permitListToCertify.size() > 10) {
                 ((GridLayout) buttonPanel.getLayout()).setRows(permitListToCertify.size());
             }
-            for (Permit p : permitListToCertify) {
-                buttonPanel.add(new JButton(p.getClient().getClientName()+" "+p.getPermitNumber()));
+            for (final Permit p : permitListToCertify) {
+                JButton btn = new JButton(p.getClient().getClientName() + " " + p.getPermitNumber());
+                btn.addActionListener(new ActionListener() {
+
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        permitNumberTest.setText(p.getPermitNumber());
+                    }
+
+                });
+                buttonPanel.add(btn);
             }
 
             buttonPanel.setVisible(true);
@@ -75,8 +90,9 @@ public class PermitCertificationForm extends javax.swing.JInternalFrame {
 
     }
 
-    public PermitCertificationForm(java.awt.Frame parent, boolean modal) {
+    public PermitCertificationForm(java.awt.Frame parent, boolean modal,FrontPage fp) {
         this();
+        this.parent=fp;
         /*try {
             
             
@@ -397,7 +413,8 @@ public class PermitCertificationForm extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "Certification does not added");
 
             }
-
+            parent.addCertificationForm();
+            
         } catch (RemoteException | SQLException | ClassNotFoundException ex) {
             Logger.getLogger(PermitCertificationForm.class
                     .getName()).log(Level.SEVERE, null, ex);

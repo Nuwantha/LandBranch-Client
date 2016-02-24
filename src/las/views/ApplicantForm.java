@@ -1450,12 +1450,7 @@ public void EnableAddButton(){
     }//GEN-LAST:event_edit_nameTextKeyReleased
 
     private void search_nic_comboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_search_nic_comboItemStateChanged
-        try {
-            searchClient((String) search_nic_combo.getSelectedItem());
-
-        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
-            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }//GEN-LAST:event_search_nic_comboItemStateChanged
 
     public void searchClient(String nic) throws ClassNotFoundException, SQLException,RemoteException {
@@ -2056,7 +2051,12 @@ public void EnableAddButton(){
     }//GEN-LAST:event_deletebuttonActionPerformed
 
     private void search_nic_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_nic_comboActionPerformed
-        // TODO add your handling code here:
+         try {
+           searchClient((String) search_nic_combo.getSelectedItem());
+
+        } catch (ClassNotFoundException | SQLException|RemoteException ex) {
+            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_search_nic_comboActionPerformed
 
     public void focustabbedpane(int num){

@@ -431,7 +431,10 @@ public class PermitForm extends javax.swing.JInternalFrame {
         cancelPermitLotNumberTest = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
         cancelpermit_cancel_permit_button = new javax.swing.JButton();
+<<<<<<< HEAD
         jTabbedPane1 = new javax.swing.JTabbedPane();
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 
         setResizable(true);

@@ -72,7 +72,7 @@ public class FrontPage extends javax.swing.JFrame {
     private FrontPage() {
         initComponents();
 
-        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.jpg"));
+        ImageIcon icon1 = new ImageIcon(getClass().getResource("/las/icons/logo-LAS-s.png"));
         setIconImage(icon1.getImage());
         try {
             Connector sConnector = Connector.getSConnector();
@@ -120,7 +120,7 @@ public class FrontPage extends javax.swing.JFrame {
 
             } //for land branch staff
             else if (currentuser.getPower() == 2) {
-
+                createNewUserMenu.setEnabled(false);
                 addcertificationbutton.setEnabled(false);
             }
         } catch (ClassNotFoundException | SQLException | RemoteException ex) {
@@ -435,7 +435,7 @@ public class FrontPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logo-LAS - Copy.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/las/icons/logo-LAS-Copy.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Stencil", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 51));
@@ -453,8 +453,8 @@ public class FrontPage extends javax.swing.JFrame {
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(titlePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -465,11 +465,13 @@ public class FrontPage extends javax.swing.JFrame {
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePanelLayout.createSequentialGroup()
                 .addGroup(titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(titlePanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
                     .addGroup(titlePanelLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)))
                 .addContainerGap())
@@ -1208,11 +1210,7 @@ public class FrontPage extends javax.swing.JFrame {
     }//GEN-LAST:event_searchByWhatComboActionPerformed
 
     private void addcertificationbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcertificationbuttonActionPerformed
-        PermitCertificationForm form = new PermitCertificationForm(this, true);
-        form.setSize(desktopPane.getSize());
-        desktopPane.removeAll();
-        desktopPane.add(form);
-        form.setVisible(true);
+        addCertificationForm();
         
         //new PermitCertificationForm(this, true).setVisible(true);
     }//GEN-LAST:event_addcertificationbuttonActionPerformed
@@ -1374,6 +1372,14 @@ public class FrontPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formKeyReleased
 
+    public void addCertificationForm(){
+        PermitCertificationForm form = new PermitCertificationForm(this, true,this);
+        form.setSize(desktopPane.getSize());
+        desktopPane.removeAll();
+        desktopPane.add(form);
+        form.setVisible(true);
+    }
+    
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         new Calculator().setVisible(true);
     }//GEN-LAST:event_jButton17ActionPerformed
