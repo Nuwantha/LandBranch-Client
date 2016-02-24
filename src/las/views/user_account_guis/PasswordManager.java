@@ -4,7 +4,10 @@
  */
 package las.views.user_account_guis;
 
+import SeverConnector.Connector;
 import java.awt.event.KeyEvent;
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -12,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import las.controller.UserController;
 import las.models.User;
+import las.views.ApplicantForm;
 
 /**
  *
@@ -29,6 +33,13 @@ public class PasswordManager extends javax.swing.JDialog {
     public PasswordManager(java.awt.Frame parent, boolean modal, String name) {
         super(parent, modal);
         initComponents();
+        try {
+            Connector sConnector = Connector.getSConnector();
+            UserController = sConnector.getUserController();
+        } catch (RemoteException | SQLException | NotBoundException | MalformedURLException | ClassNotFoundException ex) {
+            Logger.getLogger(ApplicantForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         setTitle("Change my password");
         setLocationRelativeTo(null);
         try {
@@ -75,6 +86,11 @@ public class PasswordManager extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("Enter your new password:");
 
+        currentPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currentPasswordActionPerformed(evt);
+            }
+        });
         currentPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 currentPasswordKeyReleased(evt);
@@ -214,6 +230,11 @@ public class PasswordManager extends javax.swing.JDialog {
             int res = UserController.updatePassword(newLog);
             if (res > 0) {
                 JOptionPane.showMessageDialog(this, "Your password is successfully changed");
+                newPassword.setText("");
+                retypePassword.setText("");
+                currentPassword.setText("");
+                currentPassword.requestFocus();
+                changeButton.setEnabled(false);
             } else {
                 JOptionPane.showMessageDialog(this, "Unsuccessful!");
             }
@@ -225,7 +246,9 @@ public class PasswordManager extends javax.swing.JDialog {
     private void currentPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_currentPasswordKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             try {
-                boolean bool = UserController.matchPassword(name, currentPassword.getText());
+                System.out.println(user.getName());
+                System.out.println(currentPassword.getText());
+                boolean bool = UserController.matchPassword(user.getName(), currentPassword.getText());
                 if (bool) {
                     newPassword.requestFocus();
                     newPassword.setEnabled(true);
@@ -245,6 +268,10 @@ public class PasswordManager extends javax.swing.JDialog {
 
 private void newPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_newPasswordKeyReleased
     notMatchLabel.setVisible(false);
+    if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        retypePassword.requestFocus();
+        retypePassword.setEnabled(true);
+    }
 }//GEN-LAST:event_newPasswordKeyReleased
 
     private void retypePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retypePasswordActionPerformed
@@ -254,15 +281,19 @@ private void newPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:ev
     private void retypePasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_retypePasswordKeyReleased
         notMatchLabel.setVisible(false);
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if(newPassword.getText()==retypePassword.getText()){
-            changeButton.setEnabled(true);
-            changeButton.doClick();
-            }else{
+            if (newPassword.getText().equals(retypePassword.getText())) {
+                changeButton.setEnabled(true);
+                changeButton.doClick();
+            } else {
                 retypePassword.setText("");
                 notMatchLabel.setVisible(true);
             }
         }
     }//GEN-LAST:event_retypePasswordKeyReleased
+
+    private void currentPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_currentPasswordActionPerformed
 
     /**
      * @param args the command line arguments
