@@ -120,7 +120,7 @@ public class FrontPage extends javax.swing.JFrame {
 
             } //for land branch staff
             else if (currentuser.getPower() == 2) {
-
+                createNewUserMenu.setEnabled(false);
                 addcertificationbutton.setEnabled(false);
             }
         } catch (ClassNotFoundException | SQLException | RemoteException ex) {
