@@ -1095,6 +1095,15 @@ public class FrontPage extends javax.swing.JFrame {
                 //form.requestFoucsForm();
     }
     
+    public void SetDesktopPaneForPermit(PermitForm form,int num){
+                form.setSize(desktopPane.getSize());
+                desktopPane.removeAll();
+                desktopPane.add(form);
+                form.setVisible(true);
+                form.focustabbedpane(num);
+                //form.requestFoucsForm();
+    }
+    
     public void addApplicantForm(String nic){
         ApplicantForm applicantForm = new ApplicantForm(nic);
         applicantForm.setSize(desktopPane.getSize());

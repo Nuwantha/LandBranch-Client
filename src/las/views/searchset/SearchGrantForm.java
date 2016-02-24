@@ -252,7 +252,7 @@ public class SearchGrantForm extends SearchForm {
 class PopUpTable3 extends JPopupMenu {
     
     public PopUpTable3(final JTable table) {
-        JMenuItem viewItem = new JMenuItem("View Permit");
+        JMenuItem viewItem = new JMenuItem("View Grant");
         viewItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

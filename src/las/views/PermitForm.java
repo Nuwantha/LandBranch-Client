@@ -429,7 +429,6 @@ public class PermitForm extends javax.swing.JInternalFrame {
         nameinvalidlabel = new javax.swing.JLabel();
         addressinvalidlabel = new javax.swing.JLabel();
         addpermit_add_permit_button = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setResizable(true);
         setTitle("Permit");
@@ -2170,23 +2169,13 @@ public class PermitForm extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 346, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 345, Short.MAX_VALUE)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 183, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 183, Short.MAX_VALUE)))
+                .addGap(0, 119, Short.MAX_VALUE))
         );
 
         jTabbedPane4.getAccessibleContext().setAccessibleName("Add Permit");
@@ -2786,6 +2775,10 @@ public class PermitForm extends javax.swing.JInternalFrame {
         }
         
     }
+    
+    public void focustabbedpane(int num){
+        jTabbedPane4.setSelectedIndex(num);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AddGND;
     private javax.swing.JTextField AddGND2;
@@ -2969,7 +2962,6 @@ public class PermitForm extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JLabel nameinvalidlabel;
     private javax.swing.JLabel nicInvalidLabel;

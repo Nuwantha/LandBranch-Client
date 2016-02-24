@@ -31,6 +31,7 @@ import las.controller.PermitController;
 import las.models.Permit;
 import las.views.ApplicantForm;
 import las.views.FrontPage;
+import las.views.PermitForm;
 
 /**
  *
@@ -281,16 +282,12 @@ class PopUpTable2 extends JPopupMenu {
         viewItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int selected = table.getSelectedRow();
-                String nic=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
+               int selected = table.getSelectedRow();
+                String Permitno=String.valueOf(((DefaultTableModel)table.getModel()).getValueAt(selected, 0));
                  FrontPage fp=FrontPage.getInstance();
-                ApplicantForm applicantForm = new ApplicantForm();
-                //fp.SetDesktopPane(applicantForm,1);
-                 try {
-                    applicantForm.searchClient(nic);
-                } catch (ClassNotFoundException | SQLException | RemoteException ex) {
-                    Logger.getLogger(PopUpTable.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                PermitForm Form = new PermitForm();
+                fp.SetDesktopPaneForPermit(Form,1);
+                Form.SetViewPermit(Permitno);
             }
         });
       
